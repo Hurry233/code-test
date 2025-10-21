@@ -1,0 +1,20 @@
+{
+  "name": "ai-enterprise-site-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal AI enterprise website inspired by openai.com, built with React and Vue (two separate apps) using Vite.",
+  "workspaces": [
+    "apps/react-app",
+    "apps/vue-app"
+  ],
+  "scripts": {
+    "dev:react": "npm run dev -w apps/react-app",
+    "dev:vue": "npm run dev -w apps/vue-app",
+    "build": "npm run build -w apps/react-app && npm run build -w apps/vue-app",
+    "preview:react": "npm run preview -w apps/react-app",
+    "preview:vue": "npm run preview -w apps/vue-app"
+  },
+  "keywords": ["react", "vue", "vite", "landing", "openai", "minimal", "responsive"],
+  "author": "",
+  "license": "MIT"
+}
