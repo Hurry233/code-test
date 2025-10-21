@@ -1,0 +1,35 @@
+/* Components and page-specific styling */
+
+/* Feature cards */
+.feature .icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.05)); border: 1px solid var(--border); margin-bottom: .8rem; }
+.feature .arrow { margin-top: .6rem; color: var(--muted); }
+
+/* Marquee hover pause */
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* Secure art hover */
+.secure-art .shield:hover { border-color: #2f2f3a; }
+
+/* Price cards */
+.price-card { display: grid; align-content: start; gap: .25rem; }
+.price-card .btn { justify-content: center; margin-top: .5rem; }
+
+/* Doc cards */
+.doc { display: grid; gap: .25rem; }
+
+/* CTA emphasis */
+.cta .btn-primary { box-shadow: 0 8px 24px rgba(0, 255, 163, .2); }
+
+/* Footer links */
+.footer-nav a { color: var(--muted); }
+.footer-nav a:hover { color: var(--text); }
+
+/* Hero floating cards subtle stagger */
+.floating-cards .card:nth-child(1) { transform: translateY(0); }
+.floating-cards .card:nth-child(2) { transform: translateY(6px); }
+.floating-cards .card:nth-child(3) { transform: translateY(2px); }
+
+/* Mobile nav transitions */
+.mobile-nav[hidden] { display: none; }
+.mobile-nav { animation: drop var(--transition-slow); }
+@keyframes drop { from { opacity: 0; transform: translateY(-10px);} to { opacity: 1; transform: none; } }

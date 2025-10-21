@@ -1,0 +1,16 @@
+/* Small utility classes to speed up layout adjustments */
+
+.hide { display: none !important; }
+.center { text-align: center; }
+.right { text-align: right; }
+.nowrap { white-space: nowrap; }
+
+.row { display: flex; gap: .75rem; align-items: center; }
+.stack { display: grid; gap: .75rem; }
+
+.w-full { width: 100%; }
+.max-w-prose { max-width: 70ch; }
+.round { border-radius: 999px; }
+
+/* Magnetic effect easing override when needed */
+.magnetic { will-change: transform; }
