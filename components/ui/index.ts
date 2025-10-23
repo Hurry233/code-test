@@ -2,3 +2,5 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 export { SplineScene } from "./splite";
 export { SplineSceneBasic } from "./demo";
 export { Spotlight } from "./spotlight";
+export { WorldMap } from "./world-map";
+export { WorldMapDemo } from "./world-map-demo";

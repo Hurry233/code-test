@@ -237,16 +237,132 @@ export { Spotlight } from "./ibelick/spotlight";
 
 ---
 
+### 7. WorldMap (`world-map.tsx`)
+
+**Purpose:** Interactive animated world map showing connections between geographic locations.
+
+**Location:** `/components/ui/world-map.tsx`
+
+**Usage:**
+```tsx
+import { WorldMap } from "@/components/ui/world-map";
+
+<WorldMap
+  dots={[
+    {
+      start: { lat: 40.7128, lng: -74.0060 }, // New York
+      end: { lat: 51.5074, lng: -0.1278 },    // London
+    },
+    {
+      start: { lat: 51.5074, lng: -0.1278 },  // London
+      end: { lat: 35.6762, lng: 139.6503 },   // Tokyo
+    },
+  ]}
+  lineColor="#0ea5e9"
+/>
+```
+
+**Props:**
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `dots` | `Array` | No | Array of connection objects with start/end coordinates |
+| `lineColor` | `string` | No | HEX color for connection lines and points (default: "#0ea5e9") |
+
+**Dot Object Structure:**
+```tsx
+{
+  start: { 
+    lat: number;  // Latitude (-90 to 90)
+    lng: number;  // Longitude (-180 to 180)
+    label?: string; // Optional label
+  };
+  end: { 
+    lat: number;
+    lng: number;
+    label?: string;
+  };
+}
+```
+
+**Features:**
+- ✅ Dotted world map generated with `dotted-map`
+- ✅ Animated curved paths between locations
+- ✅ Pulsing indicators on connection points
+- ✅ Theme-aware (adapts to light/dark mode)
+- ✅ Smooth path animations with `framer-motion`
+- ✅ SVG-based for crisp rendering at any size
+
+**Visual Effects:**
+- Curved arc paths between points
+- Gradient line effects
+- Animated path drawing (sequential with delay)
+- Pulsing circles on start/end points
+- Responsive aspect ratio (2:1)
+
+**Dependencies:** 
+- `dotted-map` - Map generation
+- `framer-motion` - Path animations
+- `next-themes` - Theme detection
+- `next/image` - Image optimization
+
+**Theme Behavior:**
+- Dark mode: White dots on black background
+- Light mode: Dark dots on white background
+- Line color remains constant (customizable)
+
+---
+
+### 8. WorldMapDemo (`world-map-demo.tsx`)
+
+**Purpose:** Complete marketing section demonstrating the WorldMap component.
+
+**Location:** `/components/ui/world-map-demo.tsx`
+
+**Usage:**
+```tsx
+import { WorldMapDemo } from "@/components/ui/world-map-demo";
+
+<WorldMapDemo />
+```
+
+**Props:** None - fully self-contained demo
+
+**Features:**
+- ✅ Animated headline with letter-by-letter reveal
+- ✅ Pre-configured global connection routes
+- ✅ Descriptive copy about remote connectivity
+- ✅ Responsive layout with proper spacing
+- ✅ Theme-aware styling
+
+**Included Routes:**
+- Alaska → Los Angeles
+- Alaska → Brazil
+- Brazil → Lisbon
+- London → New Delhi
+- New Delhi → Vladivostok
+- New Delhi → Nairobi
+
+**Use Cases:**
+- SaaS landing pages
+- Global service providers
+- Remote work platforms
+- International business sites
+- Logistics companies
+
+---
+
 ## Component Index
 
 All components are also exported from `/components/ui/index.ts` for convenience:
 
 ```tsx
 import { 
-  SplineScene, 
-  SplineSceneBasic, 
-  Card, 
-  Spotlight 
+  Card,
+  Spotlight,
+  SplineScene,
+  SplineSceneBasic,
+  WorldMap,
+  WorldMapDemo,
 } from "@/components/ui";
 ```
 
@@ -351,6 +467,44 @@ export function FullPageDemo() {
 }
 ```
 
+### World Map Connections
+
+```tsx
+import { WorldMap } from "@/components/ui/world-map";
+
+export function ConnectivityMap() {
+  return (
+    <WorldMap
+      lineColor="#22d3ee"
+      dots={[
+        {
+          start: { lat: 37.7749, lng: -122.4194 }, // San Francisco
+          end: { lat: 1.3521, lng: 103.8198 },     // Singapore
+        },
+        {
+          start: { lat: 48.8566, lng: 2.3522 },    // Paris
+          end: { lat: -33.8688, lng: 151.2093 },   // Sydney
+        },
+      ]}
+    />
+  );
+}
+```
+
+### Landing Section with World Map
+
+```tsx
+import { WorldMapDemo } from "@/components/ui/world-map-demo";
+
+export function RemoteWorkSection() {
+  return (
+    <section className="bg-background">
+      <WorldMapDemo />
+    </section>
+  );
+}
+```
+
 ---
 
 ## TypeScript
@@ -409,6 +563,18 @@ import { SplineScene } from "@/components/ui/splite";
 - ✅ Restart your IDE
 - ✅ Check `tsconfig.json` is configured correctly
 
+### World Map Not Rendering
+- ✅ Ensure `dotted-map` is installed
+- ✅ Verify `next-themes` ThemeProvider is wrapped around your app
+- ✅ Check that the component has sufficient width/height
+- ✅ Inspect browser console for Next.js image optimization errors
+
+### Theme Not Switching
+- ✅ Confirm ThemeProvider is added to root layout
+- ✅ Check `suppressHydrationWarning` is on `<html>` tag
+- ✅ Verify `attribute="class"` is set on ThemeProvider
+- ✅ Add `darkMode: ["class"]` to `tailwind.config.ts`
+
 ---
 
 ## Dependencies
@@ -419,7 +585,9 @@ import { SplineScene } from "@/components/ui/splite";
 - `next` - Next.js framework
 - `@splinetool/react-spline` - Spline React integration
 - `@splinetool/runtime` - Spline runtime
-- `framer-motion` - Animation library (for Ibelick spotlight)
+- `dotted-map` - SVG world map generation
+- `framer-motion` - Animation library (spotlights & world map arcs)
+- `next-themes` - Theme management for light/dark mode
 - `clsx` - Conditional class names
 - `tailwind-merge` - Merge Tailwind classes
 

@@ -1,6 +1,6 @@
-# Spline Component Integration with shadcn/ui
+# Spline & WorldMap Component Integration with shadcn/ui
 
-This project demonstrates the integration of 3D Spline scenes with shadcn/ui components, Tailwind CSS, and TypeScript in a Next.js application.
+This project demonstrates the integration of 3D Spline scenes and interactive world maps with shadcn/ui components, Tailwind CSS, and TypeScript in a Next.js application.
 
 ## 🎯 Project Overview
 
@@ -9,7 +9,9 @@ This is a complete Next.js 14 application with:
 - ✅ **Tailwind CSS** - Utility-first CSS framework
 - ✅ **shadcn/ui** - High-quality component library
 - ✅ **Spline 3D** - Interactive 3D scenes
+- ✅ **WorldMap** - Animated world map with connections
 - ✅ **Framer Motion** - Animation library
+- ✅ **Dark Mode** - Theme support with next-themes
 
 ## 📁 Project Structure
 
@@ -20,9 +22,12 @@ This is a complete Next.js 14 application with:
 │   ├── page.tsx           # Home page with demo
 │   └── globals.css        # Global styles and Tailwind directives
 ├── components/
+│   ├── theme-provider.tsx # next-themes provider wrapper
 │   └── ui/                # shadcn/ui components (IMPORTANT!)
 │       ├── splite.tsx     # Main Spline component
-│       ├── demo.tsx       # Demo implementation
+│       ├── demo.tsx       # Spline demo implementation
+│       ├── world-map.tsx  # Interactive world map component
+│       ├── world-map-demo.tsx # World map demo section
 │       ├── card.tsx       # Card component from shadcn
 │       ├── spotlight.tsx  # Spotlight export (uses aceternity by default)
 │       ├── aceternity/    # Aceternity UI variant
@@ -66,6 +71,8 @@ This will install all required packages including:
 - `@splinetool/react-spline` - React bindings for Spline
 - `@splinetool/runtime` - Spline runtime
 - `framer-motion` - Animation library
+- `dotted-map` - World map generation library
+- `next-themes` - Theme management for Next.js
 - All Next.js, React, TypeScript, and Tailwind dependencies
 
 2. **Run the development server:**
@@ -115,6 +122,48 @@ import { SplineSceneBasic } from "@/components/ui/demo";
 
 <SplineSceneBasic />
 ```
+
+### WorldMap
+
+Animated dotted world map with arc transitions between locations.
+
+```tsx
+import { WorldMap } from "@/components/ui/world-map";
+
+<WorldMap
+  dots=[
+    {
+      start: { lat: 40.7128, lng: -74.0060 },
+      end: { lat: 51.5074, lng: -0.1278 },
+    },
+  ]
+/>
+```
+
+**Props:**
+- `dots` (Array, optional) – list of connections to draw between coordinates
+- `lineColor` (string, optional) – HEX color used for the arcs and points (default: `#0ea5e9`)
+
+**Features:**
+- Generates a dotted map SVG using `dotted-map`
+- Animates path drawing with `framer-motion`
+- Reacts to dark/light themes via `next-themes`
+- Smooth pulsing indicators on origin/destination points
+
+### WorldMapDemo
+
+Complete marketing section using the world map component.
+
+```tsx
+import { WorldMapDemo } from "@/components/ui/world-map-demo";
+
+<WorldMapDemo />
+```
+
+**Highlights:**
+- Animated headline powered by `framer-motion`
+- Multiple predefined routes to showcase connectivity
+- Theme-aware colors and gradients
 
 ### Spotlight Variants
 
@@ -178,10 +227,10 @@ Configuration options:
 npx shadcn-ui@latest add card
 ```
 
-### 4. Install Spline and Animation Dependencies
+### 4. Install Required Dependencies
 
 ```bash
-npm install @splinetool/react-spline @splinetool/runtime framer-motion
+npm install @splinetool/react-spline @splinetool/runtime framer-motion dotted-map next-themes
 ```
 
 ### 5. Add Components
@@ -189,9 +238,12 @@ npm install @splinetool/react-spline @splinetool/runtime framer-motion
 Copy the components from this project:
 - `/components/ui/splite.tsx`
 - `/components/ui/demo.tsx`
+- `/components/ui/world-map.tsx`
+- `/components/ui/world-map-demo.tsx`
 - `/components/ui/aceternity/spotlight.tsx`
 - `/components/ui/ibelick/spotlight.tsx`
 - `/components/ui/spotlight.tsx`
+- `/components/theme-provider.tsx`
 
 ### 6. Update Tailwind Config
 
@@ -236,6 +288,26 @@ Add to your `globals.css`:
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+}
+```
+
+### 8. Wire Up Theme Provider
+
+Update your root layout (e.g., `/app/layout.tsx`) to include the theme provider:
+
+```tsx
+import { ThemeProvider } from "@/components/theme-provider";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }
 ```
 
