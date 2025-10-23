@@ -10,6 +10,7 @@ This is a complete Next.js 14 application with:
 - ✅ **shadcn/ui** - High-quality component library
 - ✅ **Spline 3D** - Interactive 3D scenes
 - ✅ **WorldMap** - Animated world map with connections
+- ✅ **Responsive Navbar** - shadcnblocks.com Navbar variation
 - ✅ **Framer Motion** - Animation library
 - ✅ **Dark Mode** - Theme support with next-themes
 
@@ -28,6 +29,14 @@ This is a complete Next.js 14 application with:
 │       ├── demo.tsx       # Spline demo implementation
 │       ├── world-map.tsx  # Interactive world map component
 │       ├── world-map-demo.tsx # World map demo section
+│       ├── shadcnblocks-com-navbar1.tsx # Responsive navbar component
+│       ├── shadcnblocks-com-navbar1-demo.tsx # Navbar demo
+│       ├── accordion.tsx  # Accordion component from shadcn
+│       ├── button.tsx     # Button component from shadcn
+│       ├── input.tsx      # Input component from shadcn
+│       ├── label.tsx      # Label component from shadcn
+│       ├── navigation-menu.tsx # Navigation menu component
+│       ├── sheet.tsx      # Sheet (mobile drawer) component
 │       ├── card.tsx       # Card component from shadcn
 │       ├── spotlight.tsx  # Spotlight export (uses aceternity by default)
 │       ├── aceternity/    # Aceternity UI variant
@@ -73,6 +82,9 @@ This will install all required packages including:
 - `framer-motion` - Animation library
 - `dotted-map` - World map generation library
 - `next-themes` - Theme management for Next.js
+- `lucide-react` - Icon set used across components
+- `@radix-ui/*` packages - Accessibility primitives for accordion, navigation menu, sheet, label, and slot
+- `class-variance-authority` - Variant helpers for button styling
 - All Next.js, React, TypeScript, and Tailwind dependencies
 
 2. **Run the development server:**

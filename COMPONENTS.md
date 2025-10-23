@@ -237,7 +237,136 @@ export { Spotlight } from "./ibelick/spotlight";
 
 ---
 
-### 7. WorldMap (`world-map.tsx`)
+### 7. Accordion (`accordion.tsx`)
+
+**Purpose:** Accessible accordion built on Radix primitives.
+
+**Location:** `/components/ui/accordion.tsx`
+
+**Usage:**
+```tsx
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Title</AccordionTrigger>
+    <AccordionContent>
+      <p>Content goes here.</p>
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+**Features:**
+- ✅ Radix accessibility guarantees
+- ✅ Animated open/close via Tailwind keyframes
+- ✅ Compatible with keyboard navigation
+
+---
+
+### 8. Button (`button.tsx`)
+
+**Purpose:** Standard shadcn button component with variant support.
+
+**Location:** `/components/ui/button.tsx`
+
+**Usage:**
+```tsx
+import { Button } from "@/components/ui/button";
+
+<Button variant="outline">Click me</Button>
+```
+
+**Features:**
+- Variants: `default`, `destructive`, `outline`, `secondary`, `ghost`, `link`
+- Sizes: `default`, `sm`, `lg`, `icon`
+- Supports `asChild` for polymorphic rendering
+
+---
+
+### 9. Navigation Menu (`navigation-menu.tsx`)
+
+**Purpose:** Desktop navigation menu with dropdown support.
+
+**Location:** `/components/ui/navigation-menu.tsx`
+
+**Usage:**
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+} from "@/components/ui/navigation-menu";
+```
+
+**Features:**
+- Dropdown menus with animated viewport
+- Uses Radix Navigation Menu primitives
+- Exported `navigationMenuTriggerStyle` helper for custom triggers
+
+---
+
+### 10. Sheet (`sheet.tsx`)
+
+**Purpose:** Slide-over panel used for mobile navigation.
+
+**Location:** `/components/ui/sheet.tsx`
+
+**Usage:**
+```tsx
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent side="right">Content</SheetContent>
+</Sheet>
+```
+
+**Features:**
+- Supports `side` variants: `top`, `bottom`, `left`, `right`
+- Includes `SheetHeader`, `SheetFooter`, `SheetTitle`, `SheetDescription`
+- Built on top of `@radix-ui/react-dialog`
+
+---
+
+### 11. Input (`input.tsx`)
+
+**Purpose:** Standard shadcn input field.
+
+**Location:** `/components/ui/input.tsx`
+
+**Usage:**
+```tsx
+import { Input } from "@/components/ui/input";
+
+<Input placeholder="Email" type="email" />
+```
+
+---
+
+### 12. Label (`label.tsx`)
+
+**Purpose:** Accessible form label.
+
+**Location:** `/components/ui/label.tsx`
+
+**Usage:**
+```tsx
+import { Label } from "@/components/ui/label";
+
+<Label htmlFor="email">Email</Label>
+```
+
+---
+
+### 13. WorldMap (`world-map.tsx`)
 
 **Purpose:** Interactive animated world map showing connections between geographic locations.
 
@@ -312,7 +441,7 @@ import { WorldMap } from "@/components/ui/world-map";
 
 ---
 
-### 8. WorldMapDemo (`world-map-demo.tsx`)
+### 14. WorldMapDemo (`world-map-demo.tsx`)
 
 **Purpose:** Complete marketing section demonstrating the WorldMap component.
 
@@ -351,13 +480,113 @@ import { WorldMapDemo } from "@/components/ui/world-map-demo";
 
 ---
 
+### 15. Navbar1 (`shadcnblocks-com-navbar1.tsx`)
+
+**Purpose:** Professional responsive navigation bar with dropdown menus.
+
+**Location:** `/components/ui/shadcnblocks-com-navbar1.tsx`
+
+**Usage:**
+```tsx
+import { Navbar1 } from "@/components/ui/shadcnblocks-com-navbar1";
+
+<Navbar1 
+  logo={{
+    url: "/",
+    src: "/logo.svg",
+    alt: "Company Logo",
+    title: "Company Name"
+  }}
+  menu={[
+    { title: "Home", url: "/" },
+    { title: "About", url: "/about" }
+  ]}
+  auth={{
+    login: { text: "Log in", url: "/login" },
+    signup: { text: "Sign up", url: "/signup" }
+  }}
+/>
+```
+
+**Props:**
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `logo` | `object` | No | Logo configuration with url, src, alt, title |
+| `menu` | `MenuItem[]` | No | Array of menu items (can be nested) |
+| `mobileExtraLinks` | `object[]` | No | Additional links shown in mobile menu |
+| `auth` | `object` | No | Login and signup button configuration |
+
+**MenuItem Structure:**
+```tsx
+interface MenuItem {
+  title: string;
+  url: string;
+  description?: string;
+  icon?: JSX.Element;
+  items?: MenuItem[];  // For nested dropdowns
+}
+```
+
+**Features:**
+- ✅ Desktop navigation with dropdown menus
+- ✅ Mobile-first responsive design with sheet drawer
+- ✅ Accordion-style menus on mobile
+- ✅ Icon support for menu items
+- ✅ Nested menu support
+- ✅ Login/Signup button integration
+- ✅ Fully customizable via props
+
+**Layout Behavior:**
+- **Desktop (lg+):** Horizontal navigation with hover dropdowns
+- **Mobile:** Hamburger menu opens side drawer with accordion navigation
+
+---
+
+### 16. Navbar1Demo (`shadcnblocks-com-navbar1-demo.tsx`)
+
+**Purpose:** Pre-configured demo of the Navbar1 component.
+
+**Location:** `/components/ui/shadcnblocks-com-navbar1-demo.tsx`
+
+**Usage:**
+```tsx
+import { Navbar1Demo } from "@/components/ui/shadcnblocks-com-navbar1-demo";
+
+<Navbar1Demo />
+```
+
+**Props:** None - uses demo data from shadcnblocks.com
+
+**Features:**
+- ✅ Complete navigation structure example
+- ✅ Multiple dropdown menus (Products, Resources)
+- ✅ Icons from lucide-react
+- ✅ Mobile extra links (Press, Contact, Imprint, Sitemap)
+- ✅ Authentication buttons
+
+**Included Menus:**
+- Home (simple link)
+- Products (dropdown with Blog, Company, Careers, Support)
+- Resources (dropdown with Help Center, Contact Us, Status, Terms)
+- Pricing (simple link)
+- Blog (simple link)
+
+---
+
 ## Component Index
 
 All components are also exported from `/components/ui/index.ts` for convenience:
 
 ```tsx
 import { 
+  Accordion,
+  Button,
   Card,
+  Input,
+  Label,
+  Navbar1,
+  Navbar1Demo,
+  Sheet,
   Spotlight,
   SplineScene,
   SplineSceneBasic,
@@ -588,6 +817,14 @@ import { SplineScene } from "@/components/ui/splite";
 - `dotted-map` - SVG world map generation
 - `framer-motion` - Animation library (spotlights & world map arcs)
 - `next-themes` - Theme management for light/dark mode
+- `lucide-react` - Icon library for UI components
+- `@radix-ui/react-accordion` - Accordion primitives
+- `@radix-ui/react-navigation-menu` - Navigation menu primitives
+- `@radix-ui/react-dialog` - Dialog/Sheet primitives
+- `@radix-ui/react-label` - Label primitives
+- `@radix-ui/react-slot` - Slot for polymorphic components
+- `@radix-ui/react-icons` - Icon set for navigation
+- `class-variance-authority` - CVA for button variants
 - `clsx` - Conditional class names
 - `tailwind-merge` - Merge Tailwind classes
 

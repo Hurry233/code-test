@@ -9,17 +9,28 @@ The WorldMap component has been successfully integrated into the existing Next.j
 ### New Dependencies Installed
 
 ```bash
-npm install dotted-map next-themes
+npm install dotted-map next-themes lucide-react @radix-ui/react-accordion @radix-ui/react-slot class-variance-authority @radix-ui/react-icons @radix-ui/react-navigation-menu @radix-ui/react-dialog @radix-ui/react-label
 ```
 
 - **`dotted-map`** - Generates the dotted SVG world map
 - **`next-themes`** - Manages dark/light theme switching
+- **`lucide-react`** - Icon set used throughout UI components
+- **Radix UI packages** - Accessible primitives for accordion, navigation menu, sheet, label, and slot
+- **`class-variance-authority`** - Utility for creating button variants
 
 ### New Files Created
 
 1. **`/components/ui/world-map.tsx`** - Main WorldMap component
 2. **`/components/ui/world-map-demo.tsx`** - Demo implementation
-3. **`/components/theme-provider.tsx`** - Theme provider wrapper
+3. **`/components/ui/shadcnblocks-com-navbar1.tsx`** - Responsive navbar component
+4. **`/components/ui/shadcnblocks-com-navbar1-demo.tsx`** - Navbar demo implementation
+5. **`/components/ui/accordion.tsx`** - Accordion primitive wrapper
+6. **`/components/ui/button.tsx`** - Button component
+7. **`/components/ui/navigation-menu.tsx`** - Desktop navigation menu
+8. **`/components/ui/sheet.tsx`** - Sheet (mobile drawer)
+9. **`/components/ui/input.tsx`** - Input component
+10. **`/components/ui/label.tsx`** - Label component
+11. **`/components/theme-provider.tsx`** - Theme provider wrapper
 
 ### Modified Files
 
