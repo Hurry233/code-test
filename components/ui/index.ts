@@ -41,3 +41,6 @@ export { ResearchShowcase } from "./research-showcase";
 export { SafetySection } from "./safety-section";
 export { GlobalImpactSection } from "./global-impact-section";
 export { CTASection } from "./cta-section";
+export { BentoCard, BentoGrid } from "./bento-grid";
+export { BentoDemo } from "./bento-grid-demo";
+export { FeaturesBentoSection } from "./features-bento-section";

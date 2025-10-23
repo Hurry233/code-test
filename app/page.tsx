@@ -2,6 +2,7 @@ import { SimplifiedNavbar } from "@/components/ui/simplified-navbar";
 import { HeroSection } from "@/components/ui/hero-section";
 import { InnovationSection } from "@/components/ui/innovation-section";
 import { ProductsSection } from "@/components/ui/products-section";
+import { FeaturesBentoSection } from "@/components/ui/features-bento-section";
 import { ResearchShowcase } from "@/components/ui/research-showcase";
 import { SafetySection } from "@/components/ui/safety-section";
 import { GlobalImpactSection } from "@/components/ui/global-impact-section";
@@ -15,6 +16,7 @@ export default function Home() {
         <HeroSection />
         <InnovationSection />
         <ProductsSection />
+        <FeaturesBentoSection />
         <ResearchShowcase />
         <SafetySection />
         <GlobalImpactSection />
