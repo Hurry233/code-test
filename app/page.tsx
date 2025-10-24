@@ -6,6 +6,7 @@ import { FeaturesBentoSection } from "@/components/ui/features-bento-section";
 import { ResearchShowcase } from "@/components/ui/research-showcase";
 import { SafetySection } from "@/components/ui/safety-section";
 import { GlobalImpactSection } from "@/components/ui/global-impact-section";
+import { PricingSection } from "@/components/ui/pricing-section";
 import { CTASection } from "@/components/ui/cta-section";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <ResearchShowcase />
         <SafetySection />
         <GlobalImpactSection />
+        <PricingSection />
         <CTASection />
       </main>
     </>

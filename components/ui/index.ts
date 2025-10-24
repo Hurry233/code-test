@@ -8,6 +8,7 @@ export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./
 export { Button, buttonVariants } from "./button";
 export { Input } from "./input";
 export { Label } from "./label";
+export { Switch } from "./switch";
 export { 
   NavigationMenu, 
   NavigationMenuList, 
@@ -34,12 +35,15 @@ export {
 export { Navbar1 } from "./shadcnblocks-com-navbar1";
 export { Navbar1Demo } from "./shadcnblocks-com-navbar1-demo";
 export { SimplifiedNavbar } from "./simplified-navbar";
+export { ThemeToggle } from "./theme-toggle";
 export { HeroSection } from "./hero-section";
 export { InnovationSection } from "./innovation-section";
 export { ProductsSection } from "./products-section";
 export { ResearchShowcase } from "./research-showcase";
 export { SafetySection } from "./safety-section";
 export { GlobalImpactSection } from "./global-impact-section";
+export { Pricing } from "./pricing";
+export { PricingSection } from "./pricing-section";
 export { CTASection } from "./cta-section";
 export { BentoCard, BentoGrid } from "./bento-grid";
 export { BentoDemo } from "./bento-grid-demo";

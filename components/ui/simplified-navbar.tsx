@@ -11,6 +11,7 @@ const navItems = [
   { name: "Research", href: "#research" },
   { name: "Products", href: "#products" },
   { name: "Safety", href: "#safety" },
+  { name: "Pricing", href: "#pricing" },
   { name: "Company", href: "#company" },
 ];
 
