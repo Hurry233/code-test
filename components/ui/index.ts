@@ -48,3 +48,5 @@ export { CTASection } from "./cta-section";
 export { BentoCard, BentoGrid } from "./bento-grid";
 export { BentoDemo } from "./bento-grid-demo";
 export { FeaturesBentoSection } from "./features-bento-section";
+export { default as DisplayCards } from "./display-cards";
+export { DisplayCardsDemo } from "./display-cards-demo";
