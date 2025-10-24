@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.shadcnblocks.com",
       },
+      {
+        protocol: "https",
+        hostname: "deifkwefumgah.cloudfront.net",
+      },
     ],
   },
 };
