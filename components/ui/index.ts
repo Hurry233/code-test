@@ -50,3 +50,12 @@ export { BentoDemo } from "./bento-grid-demo";
 export { FeaturesBentoSection } from "./features-bento-section";
 export { default as DisplayCards } from "./display-cards";
 export { DisplayCardsDemo } from "./display-cards-demo";
+export {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./carousel";
+export { Logos3 } from "./logos3";
+export { Logos3Demo } from "./demo";
