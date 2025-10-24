@@ -2,8 +2,8 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 export { SplineScene } from "./splite";
 export { SplineSceneBasic } from "./demo";
 export { Spotlight } from "./spotlight";
-export { WorldMap } from "./world-map";
-export { WorldMapDemo } from "./world-map-demo";
+export { WorldMap } from "./map";
+export { WorldMapDemo } from "./map-demo";
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion";
 export { Button, buttonVariants } from "./button";
 export { Input } from "./input";
@@ -59,3 +59,5 @@ export {
 } from "./carousel";
 export { Logos3 } from "./logos3";
 export { Logos3Demo } from "./demo";
+export { WordRotate } from "./word-rotate";
+export { WordRotateDemo } from "./word-rotate-demo";
