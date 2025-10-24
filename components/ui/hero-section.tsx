@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { SplineScene } from "@/components/ui/splite";
+import { WordRotate } from "@/components/ui/word-rotate";
 
 export function HeroSection() {
   return (
@@ -37,7 +38,7 @@ export function HeroSection() {
             </motion.div>
 
             {/* Main headline */}
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -51,10 +52,12 @@ export function HeroSection() {
                 that benefits
               </span>
               <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-primary/60">
-                all of humanity
-              </span>
-            </motion.h1>
+              <WordRotate
+                words={["all of humanity", "everyone", "the world", "our future"]}
+                className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-primary/60"
+                duration={3000}
+              />
+            </motion.div>
 
             {/* Subtitle */}
             <motion.p
