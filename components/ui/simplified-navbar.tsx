@@ -8,11 +8,11 @@ import Link from "next/link";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const navItems = [
-  { name: "Research", href: "#research" },
-  { name: "Products", href: "#products" },
-  { name: "Safety", href: "#safety" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Company", href: "#company" },
+  { name: "Products", href: "/products" },
+  { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function SimplifiedNavbar() {
