@@ -5,6 +5,7 @@ export { Spotlight } from "./spotlight";
 export { WorldMap } from "./map";
 export { WorldMapDemo } from "./map-demo";
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion";
+export { Badge, badgeVariants } from "./badge";
 export { Button, buttonVariants } from "./button";
 export { Input } from "./input";
 export { Label } from "./label";
@@ -59,5 +60,6 @@ export {
 } from "./carousel";
 export { Logos3 } from "./logos3";
 export { Logos3Demo } from "./demo";
+export { PricingDemo } from "./pricing-demo";
 export { WordRotate } from "./word-rotate";
 export { WordRotateDemo } from "./word-rotate-demo";
