@@ -5,156 +5,156 @@ import * as React from "react"
 import { Pricing, type PricingPlan } from "@/components/ui/pricing-cards"
 import { Tab } from "@/components/ui/pricing-tab"
 
-type ModeKey = "Time-based" | "Usage-based"
+type ModeKey = "会员订阅" | "API计费"
 
-const TIME_BASED_PLANS: PricingPlan[] = [
+const MEMBER_PLANS: PricingPlan[] = [
   {
-    name: "Monthly Pass",
-    description: "Flexible access with month-to-month billing for smaller teams just getting started.",
-    price: "$39",
-    priceSuffix: "/ month",
+    name: "月度会员",
+    description: "面向个人创作者与小团队，一价畅享GPT、Claude、Gemini、Midjourney等主流模型镜像。",
+    price: "¥199",
+    priceSuffix: "/ 月",
     features: [
       {
-        title: "Unlimited core usage",
-        description: "All essential endpoints included with fair use limits.",
+        title: "无限畅享主流模型",
+        description: "会员期内不限次数调用GPT-4、Claude 3.5、Gemini Advanced等镜像服务。",
       },
       {
-        title: "Community support",
-        description: "Get help from our engineers within 24 hours.",
+        title: "Midjourney绘图",
+        description: "包含Midjourney图像生成额度，快速创作高质量视觉内容。",
       },
       {
-        title: "Cancel anytime",
-        description: "No long-term contracts or hidden fees.",
+        title: "全球节点加速",
+        description: "超低延迟接入海外官方服务，7x24小时运维保障。",
       },
     ],
     action: {
-      label: "Start monthly",
+      label: "立即开通",
       icon: "move-right",
     },
   },
   {
-    name: "Quarterly Pass",
-    description: "Best balance between savings and flexibility for growing teams.",
-    price: "$99",
-    priceSuffix: "/ quarter",
+    name: "季度会员",
+    description: "适合长期使用的专业团队，享受更多优惠价格与优先支持。",
+    price: "¥549",
+    priceSuffix: "/ 季",
     features: [
       {
-        title: "Priority support",
-        description: "Direct chat with our specialists during business hours.",
+        title: "全量模型合集",
+        description: "同步更新OpenAI、Anthropic、Google最新模型与升级。",
       },
       {
-        title: "Advanced analytics",
-        description: "Detailed insights into usage trends and performance.",
+        title: "专属客服与工单",
+        description: "企业级响应机制，重大需求优先处理。",
       },
       {
-        title: "Automation toolkit",
-        description: "Workflow templates to help you launch faster.",
+        title: "团队协作",
+        description: "支持多人账号共享调用统计与使用管理。",
       },
     ],
     action: {
-      label: "Upgrade now",
+      label: "首选方案",
       icon: "move-right",
     },
     highlight: true,
   },
   {
-    name: "Annual Pass",
-    description: "Lock in our best rate and partner with us for long-term success.",
-    price: "$349",
-    priceSuffix: "/ year",
+    name: "年度会员",
+    description: "为企业及机构提供整年服务，包含白名单定制与高级运维。",
+    price: "¥1,999",
+    priceSuffix: "/ 年",
     features: [
       {
-        title: "Dedicated success manager",
-        description: "Planning sessions to keep your roadmap on track.",
+        title: "白名单优先开通",
+        description: "提前体验最新模型与功能，专人协助迁移。",
       },
       {
-        title: "Custom integrations",
-        description: "We help connect your data sources and tooling.",
+        title: "专属知识库",
+        description: "赠送企业知识库搭建与创作工作流诊断。",
       },
       {
-        title: "Priority roadmap access",
-        description: "Early access to new platform capabilities.",
+        title: "定制合同与发票",
+        description: "支持企业采购流程与多种付款方式。",
       },
     ],
     action: {
-      label: "Talk to sales",
+      label: "预约顾问",
       icon: "phone-call",
       variant: "outline",
     },
   },
 ]
 
-const USAGE_BASED_PLANS: PricingPlan[] = [
+const API_PLANS: PricingPlan[] = [
   {
-    name: "$20 Credits",
-    description: "Ideal for prototypes, hackathons, or occasional workloads.",
-    price: "$20",
-    priceSuffix: "credit pack",
+    name: "¥1,000 API额度",
+    description: "适合验证期项目，零门槛接入统一大模型网关。",
+    price: "¥1,000",
+    priceSuffix: "充值包",
     features: [
       {
-        title: "Full platform access",
-        description: "Experiment with every model without restrictions.",
+        title: "一键接入Claude Code",
+        description: "提供SDK与示例，极速完成代码助手集成。",
       },
       {
-        title: "Never expires",
-        description: "Top up once and use credits whenever you need them.",
+        title: "按量计费",
+        description: "按实际调用扣费，额度可用于所有模型路线。",
       },
       {
-        title: "Instant provisioning",
-        description: "Credits unlock in seconds after checkout.",
+        title: "监控面板",
+        description: "实时查看QPS、延迟、消耗与错误率。",
       },
     ],
     action: {
-      label: "Purchase credits",
+      label: "立即充值",
       icon: "move-right",
     },
   },
   {
-    name: "$100 Credits",
-    description: "Perfect for teams running pilots or onboarding new products.",
-    price: "$100",
-    priceSuffix: "credit pack",
+    name: "¥5,000 API额度",
+    description: "团队研发首选，支持自定义限流与合作伙伴管理。",
+    price: "¥5,000",
+    priceSuffix: "充值包",
     features: [
       {
-        title: "Volume bonus",
-        description: "Automatic 10% extra usage on every purchase.",
+        title: "50%额度赠送",
+        description: "赠送额外¥2,500额度，降低大模型使用成本。",
       },
       {
-        title: "Shared wallets",
-        description: "Distribute credits across teams and projects.",
+        title: "多环境隔离",
+        description: "支持开发/测试/生产多环境密钥管理。",
       },
       {
-        title: "Flexible limits",
-        description: "Scale usage up or down with no penalties.",
+        title: "专属技术顾问",
+        description: "接口调优、限流策略、容灾方案一站式支持。",
       },
     ],
     action: {
-      label: "Purchase credits",
+      label: "团队套餐",
       icon: "move-right",
     },
     highlight: true,
   },
   {
-    name: "$500 Credits",
-    description: "Designed for production workloads that demand consistency.",
-    price: "$500",
-    priceSuffix: "credit pack",
+    name: "企业定制额度",
+    description: "面向大规模调用场景，提供专线加速与SLA保障。",
+    price: "¥20,000+",
+    priceSuffix: "按需定制",
     features: [
       {
-        title: "Enterprise SLA",
-        description: "Guaranteed uptime with priority incident response.",
+        title: "专用网关与IP白名单",
+        description: "确保与企业内网/云资源安全互通。",
       },
       {
-        title: "Dedicated support",
-        description: "Direct line to our solutions architects.",
+        title: "数据合规支持",
+        description: "满足金融、教育、政府等行业合规要求。",
       },
       {
-        title: "Custom invoicing",
-        description: "Flexible billing to match your procurement process.",
+        title: "联合研发",
+        description: "模型微调、知识库构建、工作流落地全流程陪跑。",
       },
     ],
     action: {
-      label: "Contact sales",
+      label: "联系商务",
       icon: "phone-call",
       variant: "outline",
     },
@@ -162,22 +162,22 @@ const USAGE_BASED_PLANS: PricingPlan[] = [
 ]
 
 const MODES: Record<ModeKey, { badge: string; title: string; description: string; plans: PricingPlan[] }> = {
-  "Time-based": {
-    badge: "Time-based billing",
-    title: "Predictable subscriptions that scale with you",
-    description: "Pick the pass that fits your runway. All plans include collaboration tools, analytics, and security defaults.",
-    plans: TIME_BASED_PLANS,
+  "会员订阅": {
+    badge: "会员订阅",
+    title: "镜像服务不限次数，全面解锁国际大模型",
+    description: "会员期内畅享GPT、Claude、Gemini、Midjourney等顶尖模型镜像，提供企业级运维保障。",
+    plans: MEMBER_PLANS,
   },
-  "Usage-based": {
-    badge: "Usage-based billing",
-    title: "Only pay for the usage you need",
-    description: "Load up credits for bursts of demand or seasonal traffic. Spend them whenever you want with no expiration.",
-    plans: USAGE_BASED_PLANS,
+  "API计费": {
+    badge: "API计费",
+    title: "统一网关，按量付费",
+    description: "按需购买额度，一键接入主流模型API，适用于应用开发、自动化工作流、企业系统集成。",
+    plans: API_PLANS,
   },
 }
 
 export function PricingSection() {
-  const [selectedMode, setSelectedMode] = React.useState<ModeKey>("Time-based")
+  const [selectedMode, setSelectedMode] = React.useState<ModeKey>("会员订阅")
   const { badge, title, description, plans } = MODES[selectedMode]
 
   return (
@@ -197,7 +197,7 @@ export function PricingSection() {
                   text={mode}
                   selected={selectedMode === mode}
                   setSelected={() => setSelectedMode(mode)}
-                  discount={mode === "Time-based"}
+                  discount={mode === "会员订阅"}
                 />
               ))}
             </div>

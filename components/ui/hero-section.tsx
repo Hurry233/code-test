@@ -33,7 +33,7 @@ export function HeroSection() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 border border-border/50 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium">Introducing Next-Gen AI</span>
+                <span className="text-sm font-medium">国际大模型服务平台</span>
               </div>
             </motion.div>
 
@@ -45,15 +45,15 @@ export function HeroSection() {
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/60">
-                Creating safe AI
+                连接世界
               </span>
               <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground/80 to-muted-foreground">
-                that benefits
+                顶尖AI模型
               </span>
               <br />
               <WordRotate
-                words={["all of humanity", "everyone", "the world", "our future"]}
+                words={["GPT-4", "Claude", "Gemini", "Midjourney"]}
                 className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-primary/60"
                 duration={3000}
               />
@@ -66,8 +66,8 @@ export function HeroSection() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
             >
-              We&apos;re building advanced AI systems that understand and generate 
-              human-like text, creating new possibilities for innovation.
+              提供国际主流大模型镜像服务、统一API网关和定制化解决方案，
+              让您无需翻墙，即可畅享全球顶尖AI能力
             </motion.p>
 
             {/* CTA Buttons */}
@@ -78,11 +78,11 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row items-start gap-4 pt-4"
             >
               <Button size="lg" className="group">
-                Get Started
+                立即开始
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" className="bg-background/50 backdrop-blur-sm">
-                View Demo
+                查看定价
               </Button>
             </motion.div>
 
@@ -94,9 +94,9 @@ export function HeroSection() {
               className="grid grid-cols-3 gap-8 pt-8"
             >
               {[
-                { value: "100M+", label: "Active Users" },
-                { value: "175+", label: "Countries" },
-                { value: "99.9%", label: "Uptime" },
+                { value: "50+", label: "接入主流大模型" },
+                { value: "3min", label: "一键配置上线" },
+                { value: "7x24h", label: "企业级运维保障" },
               ].map((stat, index) => (
                 <div key={index}>
                   <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60">

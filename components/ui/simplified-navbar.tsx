@@ -21,24 +21,25 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   {
-    name: "Products",
+    name: "产品服务",
     subItems: [
-      { name: "AI Platform", href: "/products/ai-platform", description: "Build with our AI technology" },
-      { name: "API Access", href: "/products/api", description: "Integrate our APIs" },
-      { name: "Enterprise", href: "/products/enterprise", description: "Solutions for teams" },
+      { name: "大模型镜像", href: "/products/mirror", description: "GPT、Claude、Gemini等主流模型" },
+      { name: "API网关", href: "/products/api-gateway", description: "统一的大模型API中转" },
+      { name: "官方代充", href: "/products/recharge", description: "ChatGPT官方订阅代充" },
+      { name: "镜像系统", href: "/products/mirror-system", description: "国内直连ChatGPT官网" },
     ],
   },
   {
-    name: "Resources",
+    name: "定制服务",
     subItems: [
-      { name: "Documentation", href: "/resources/docs", description: "Technical guides" },
-      { name: "Blog", href: "/blog", description: "Latest updates" },
-      { name: "Case Studies", href: "/resources/case-studies", description: "Customer stories" },
+      { name: "创作工作流", href: "/services/workflow", description: "自动化创作流程" },
+      { name: "知识库搭建", href: "/services/knowledge-base", description: "企业专属知识库" },
+      { name: "模型微调", href: "/services/fine-tuning", description: "定制化模型训练" },
     ],
   },
-  { name: "About", href: "/about" },
-  { name: "Pricing", href: "/#pricing" },
-  { name: "Contact", href: "/contact" },
+  { name: "关于我们", href: "/about" },
+  { name: "定价方案", href: "/#pricing" },
+  { name: "联系我们", href: "/contact" },
 ];
 
 export function SimplifiedNavbar() {

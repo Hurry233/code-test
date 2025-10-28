@@ -16,9 +16,9 @@ import { Sparkles, ShieldCheck, Rocket } from "lucide-react";
 const displayCards = [
   {
     icon: <Sparkles className="size-4 text-violet-300" />,
-    title: "Innovation",
-    description: "Launch AI features faster",
-    date: "Updated today",
+    title: "大模型镜像",
+    description: "GPT/Claude/Gemini等50+模型",
+    date: "会员畅享",
     iconClassName: "text-violet-500",
     titleClassName: "text-violet-600 dark:text-violet-400",
     className:
@@ -26,9 +26,9 @@ const displayCards = [
   },
   {
     icon: <ShieldCheck className="size-4 text-emerald-300" />,
-    title: "Security",
-    description: "Enterprise-ready compliance",
-    date: "Last week",
+    title: "API网关",
+    description: "统一接口按量计费",
+    date: "灵活扩展",
     iconClassName: "text-emerald-500",
     titleClassName: "text-emerald-600 dark:text-emerald-400",
     className:
@@ -36,9 +36,9 @@ const displayCards = [
   },
   {
     icon: <Rocket className="size-4 text-sky-300" />,
-    title: "Scale",
-    description: "Deploy globally in minutes",
-    date: "This quarter",
+    title: "定制服务",
+    description: "工作流、知识库、模型微调",
+    date: "专业团队",
     iconClassName: "text-sky-500",
     titleClassName: "text-sky-600 dark:text-sky-400",
     className:
@@ -59,13 +59,13 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-16 max-w-3xl text-center space-y-4">
               <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
-                Highlights
+                核心能力
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-                Build momentum with curated insights
+                一站式接入全球顶尖AI
               </h2>
               <p className="text-lg text-muted-foreground">
-                Surface the updates, launches, and learnings that matter most to your team in a single glance.
+                覆盖大模型镜像、统一网关、官方代充和定制化服务，满足企业与个人的多样化场景需求。
               </p>
             </div>
             <div className="flex justify-center">
