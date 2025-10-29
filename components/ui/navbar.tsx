@@ -133,7 +133,7 @@ const Navbar = ({
 }: NavbarProps) => {
   return (
     <section className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/40">
-      <div className="container">
+      <div className="container mx-auto px-4 lg:px-8">
         <nav className="hidden justify-between lg:flex py-4">
           <div className="flex items-center gap-6">
             <Link href={logo.url} className="flex items-center gap-2">
