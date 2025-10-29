@@ -1,4 +1,5 @@
-import { SimplifiedNavbar } from "@/components/ui/simplified-navbar";
+import { Navbar } from "@/components/ui/navbar";
+import { SiteFooter } from "@/components/ui/site-footer";
 import { HeroSection } from "@/components/ui/hero-section";
 import { Logos3 } from "@/components/ui/logos3";
 import { InnovationSection } from "@/components/ui/innovation-section";
@@ -11,7 +12,7 @@ import { PricingSection } from "@/components/ui/pricing-section";
 import { CTASection } from "@/components/ui/cta-section";
 import DisplayCards from "@/components/ui/display-cards";
 import { TimelineDemo } from "@/components/ui/timeline-demo";
-import { Sparkles, ShieldCheck, Rocket } from "lucide-react";
+import { Sparkles, ShieldCheck, Rocket, Github, Twitter, Linkedin } from "lucide-react";
 
 const displayCards = [
   {
@@ -49,8 +50,8 @@ const displayCards = [
 export default function Home() {
   return (
     <>
-      <SimplifiedNavbar />
-      <main className="overflow-hidden">
+      <Navbar />
+      <main className="overflow-hidden pt-24">
         <HeroSection />
         <Logos3 heading="Trusted by leading technology companies" />
         <InnovationSection />
@@ -86,6 +87,7 @@ export default function Home() {
         <PricingSection />
         <CTASection />
       </main>
+      <SiteFooter />
     </>
   );
 }

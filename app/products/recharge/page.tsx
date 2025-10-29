@@ -1,4 +1,5 @@
-import { SimplifiedNavbar } from "@/components/ui/simplified-navbar";
+import { Navbar } from "@/components/ui/navbar";
+import { SiteFooter } from "@/components/ui/site-footer";
 import { CTASection } from "@/components/ui/cta-section";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -15,7 +16,7 @@ const benefits = [
 export default function RechargePage() {
   return (
     <>
-      <SimplifiedNavbar />
+      <Navbar />
       <main className="min-h-screen bg-background pt-24 pb-32">
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
@@ -70,6 +71,7 @@ export default function RechargePage() {
         </section>
         <CTASection />
       </main>
+      <SiteFooter />
     </>
   );
 }
