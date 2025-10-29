@@ -5,24 +5,24 @@ import { motion } from "framer-motion";
 export function ResearchShowcase() {
   const highlightCards = [
     {
-      title: "Interactive prototypes",
-      caption: "Live demos",
-      description: "Experience breakthrough interfaces generated directly from our latest model checkpoints.",
+      title: "行业解决方案蓝图",
+      caption: "场景设计",
+      description: "结合金融、教育、制造、政务等行业痛点，输出可落地的大模型应用方案。",
     },
     {
-      title: "Alignment insights",
-      caption: "Research briefs",
-      description: "Transparent reporting keeps every experiment grounded in safety metrics and human feedback.",
+      title: "安全合规白皮书",
+      caption: "合规研究",
+      description: "从数据治理、访问控制、合规审计多维度，保障企业级大模型应用安全可控。",
     },
     {
-      title: "Open collaborations",
-      caption: "Global labs",
-      description: "Join partner institutions shaping benchmarks for reasoning, robotics, and multimodal learning.",
+      title: "AI 生产力工具包",
+      caption: "工具集",
+      description: "提供工作流、知识库、智能助手等模板，帮助团队快速搭建专属 AI 能力。",
     },
     {
-      title: "Deployment playbooks",
-      caption: "Production ready",
-      description: "Operational guides show how we carry ideas from whiteboard concepts to launched features.",
+      title: "部署实施手册",
+      caption: "上线指南",
+      description: "覆盖镜像部署、API 接入、运维监控等环节，确保项目高效上线并稳定运行。",
     },
   ];
 
@@ -39,7 +39,7 @@ export function ResearchShowcase() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 text-sm font-medium text-primary"
             >
-              Research in motion
+              行业洞察
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export function ResearchShowcase() {
               transition={{ delay: 0.1, duration: 0.6 }}
               className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight"
             >
-              Bridging theory and product experiences
+              从场景到落地的全链路赋能
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -57,8 +57,7 @@ export function ResearchShowcase() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-base sm:text-lg text-muted-foreground leading-relaxed"
             >
-              Our research programs explore new capabilities and alignment techniques, and we bring those advances 
-              into production with careful evaluation. Preview the latest interactive concepts in real time.
+              我们深入垂直行业场景，结合技术能力与行业洞察，输出可落地的大模型应用方案，并提供从接入到运维的全流程支持。
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -69,20 +68,20 @@ export function ResearchShowcase() {
             >
               {[
                 {
-                  title: "Generative experiences",
-                  description: "Transform prompts into dynamic worlds, interfaces, and simulations."
+                  title: "行业顾问陪伴",
+                  description: "资深架构师与行业专家联合调研，明确业务目标与实施路径。"
                 },
                 {
-                  title: "Adaptive reasoning",
-                  description: "Models that learn from feedback loops and adapt in-context."
+                  title: "解决方案设计",
+                  description: "定制镜像接入、API 网关、知识库、工作流、微调等组合方案。"
                 },
                 {
-                  title: "Multimodal interfaces",
-                  description: "Understand text, imagery, and motion in a single unified system."
+                  title: "交付与培训",
+                  description: "提供环境部署、权限配置、团队培训、运营手册等配套服务。"
                 },
                 {
-                  title: "Evaluation pipelines",
-                  description: "Continuous monitoring and alignment scoring for safe deployment."
+                  title: "持续运营优化",
+                  description: "监控效果指标，持续调优模型与流程，保障业务成果。"
                 }
               ].map((item) => (
                 <div key={item.title} className="space-y-2">

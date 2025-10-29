@@ -192,6 +192,25 @@
 5. **官方代充页面**: 单独创建ChatGPT官方代充的详情页
 6. **镜像系统预售**: 添加预售通知和预约功能
 
+## 新增子页面
+
+已为导航链接配置对应的详情页面：
+
+- `/products/mirror` - 国际大模型镜像服务
+- `/products/api-gateway` - 统一大模型 API 网关
+- `/products/recharge` - ChatGPT 官方订阅代充
+- `/products/mirror-system` - ChatGPT 官网镜像系统（预售）
+- `/services/workflow` - 创作工作流定制
+- `/services/knowledge-base` - 企业知识库搭建
+- `/services/fine-tuning` - 模型微调服务
+
+每个页面均包含：
+- 服务简介与核心价值
+- 详细功能/亮点列表
+- 呼叫动作按钮（CTA）
+- 与首页 CTA 区块联动
+- 响应式布局与一致的视觉风格
+
 ## 文件变更清单
 
 - `components/ui/simplified-navbar.tsx` - 导航栏中文化及下拉菜单
@@ -200,7 +219,13 @@
 - `components/ui/timeline-demo.tsx` - 时间线内容业务化
 - `components/ui/pricing-section.tsx` - 定价方案完全重构
 - `components/ui/cta-section.tsx` - CTA文案本地化
+- `components/ui/innovation-section.tsx` - 创新特色内容改写
+- `components/ui/products-section.tsx` - 产品展示内容更新
+- `components/ui/features-bento-section.tsx` - 平台特色标题更新
+- `components/ui/research-showcase.tsx` - 行业洞察内容更新
 - `app/page.tsx` - 首页展示卡片内容更新
+- `app/products/*/page.tsx` - 新增产品详情页
+- `app/services/*/page.tsx` - 新增定制服务页
 - `next.config.mjs` - 添加 Unsplash 图片域名
 
 所有更新均已提交到 `feat/pricing-shadcn-integration` 分支。

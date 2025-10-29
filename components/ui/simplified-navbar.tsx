@@ -46,6 +46,7 @@ export function SimplifiedNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,12 +79,12 @@ export function SimplifiedNavbar() {
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <div className="flex items-center">
-                <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60">
-                  AI
-                </span>
-                <span className="text-2xl font-light text-muted-foreground">
-                  Corp
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">AI</span>
+                </div>
+                <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60">
+                  大模型服务
                 </span>
               </div>
             </Link>
@@ -95,34 +96,52 @@ export function SimplifiedNavbar() {
 
                 if (hasSubItems) {
                   return (
-                    <div key={item.name} className="relative group">
+                    <div 
+                      key={item.name} 
+                      className="relative"
+                      onMouseEnter={() => setOpenDesktopDropdown(item.name)}
+                      onMouseLeave={() => setOpenDesktopDropdown(null)}
+                      onFocusCapture={() => setOpenDesktopDropdown(item.name)}
+                      onBlurCapture={(event) => {
+                        if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+                          setOpenDesktopDropdown(null)
+                        }
+                      }}
+                    >
                       <button
                         type="button"
+                        aria-expanded={openDesktopDropdown === item.name}
                         className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        onClick={(event) => {
+                          event.preventDefault()
+                          setOpenDesktopDropdown((prev) => (prev === item.name ? null : item.name))
+                        }}
                       >
                         {item.name}
-                        <ChevronDown className="h-4 w-4 transition-transform group-hover:-rotate-180" />
+                        <ChevronDown className={`h-4 w-4 transition-transform ${openDesktopDropdown === item.name ? 'rotate-180' : ''}`} />
                       </button>
-                      <div className="pointer-events-none absolute left-0 top-full mt-2 w-64 overflow-hidden rounded-xl border border-border/60 bg-background/95 p-3 opacity-0 shadow-lg backdrop-blur transition-all duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 translate-y-2">
-                        <div className="flex flex-col gap-1">
-                          {item.subItems?.map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              href={subItem.href}
-                              className="rounded-lg px-3 py-2 text-left transition-colors hover:bg-muted/60"
-                            >
-                              <p className="text-sm font-semibold text-foreground">
-                                {subItem.name}
-                              </p>
-                              {subItem.description ? (
-                                <p className="text-xs text-muted-foreground">
-                                  {subItem.description}
+                      {openDesktopDropdown === item.name && (
+                        <div className="absolute left-0 top-full mt-2 w-64 overflow-hidden rounded-xl border border-border/60 bg-background/95 p-3 shadow-lg backdrop-blur animate-in fade-in-0 slide-in-from-top-2 duration-200">
+                          <div className="flex flex-col gap-1">
+                            {item.subItems?.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="rounded-lg px-3 py-2 text-left transition-colors hover:bg-muted/60"
+                              >
+                                <p className="text-sm font-semibold text-foreground">
+                                  {subItem.name}
                                 </p>
-                              ) : null}
-                            </Link>
-                          ))}
+                                {subItem.description ? (
+                                  <p className="text-xs text-muted-foreground">
+                                    {subItem.description}
+                                  </p>
+                                ) : null}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   );
                 }
