@@ -7,44 +7,30 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import {
   ArrowRight,
-  BarChart3,
+  Check,
   Clapperboard,
   Database,
   Layers,
   MessageSquare,
   PenTool,
-  Scale,
-  Settings2,
   Sparkles,
   Zap,
 } from "lucide-react";
 
-const comparisonPoints = [
-  {
-    aspect: "产品定位",
-    aggregator: "面向多模态内容创作的全能工作台，集合对话、绘画、视频、文档能力。",
-    mirror: "专注于还原 ChatGPT 官网体验，提供官方生态的稳定访问。",
-  },
-  {
-    aspect: "交互体验",
-    aggregator: "统一控制台，一次登录畅享 40+ 模型，支持多终端与协同管理。",
-    mirror: "保留官方界面，适合对原生 ChatGPT 生态有强需求的个人与团队。",
-  },
-  {
-    aspect: "内容形态",
-    aggregator: "涵盖文本、图片、视频、PPT 等多形态创作流程，可串联企业工作流。",
-    mirror: "聚焦文本对话、代码解释器、插件等 ChatGPT 原生能力。",
-  },
-  {
-    aspect: "适用人群",
-    aggregator: "市场营销、品牌运营、教育培训、视频创作者、企业内部协作团队。",
-    mirror: "喜欢原生 ChatGPT 体验的个人用户、需要保留官方功能的团队。",
-  },
-  {
-    aspect: "付费模式",
-    aggregator: "按席位/功能包灵活组合，支持企业批量开通与私有化部署。",
-    mirror: "会员制或按量付费，按账号维度计费。",
-  },
+const aggregatorAdvantages = [
+  "40+ 主流模型一站式聚合",
+  "对话、绘画、视频、PPT 全覆盖",
+  "企业级工作流编排",
+  "多团队协作与权限管理",
+  "按需灵活扩展",
+];
+
+const mirrorAdvantages = [
+  "100% 还原 ChatGPT 官方体验",
+  "完整插件生态与代码解释器",
+  "熟悉的界面，零学习成本",
+  "会员制不限次数使用",
+  "对抗降智策略保障",
 ];
 
 const aggregatorModules = [
@@ -58,6 +44,7 @@ const aggregatorModules = [
       "知识库一键绑定，支持上下文检索",
       "会话看板与任务流转，保障团队协同",
     ],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80",
   },
   {
     icon: PenTool,
@@ -69,10 +56,11 @@ const aggregatorModules = [
       "批量生成与尺寸自适应",
       "版权审核与敏感内容拦截",
     ],
+    image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1600&q=80",
   },
   {
     icon: Clapperboard,
-    title: "AP 视频",
+    title: "AI 视频",
     description:
       "从脚本生成、分镜设计到视频成片，全流程 AI 驱动，适配短视频与长内容。",
     bullets: [
@@ -80,6 +68,7 @@ const aggregatorModules = [
       "AI 配音、字幕、背景音乐自动匹配",
       "与主流剪辑软件无缝衔接",
     ],
+    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80",
   },
   {
     icon: Layers,
@@ -91,30 +80,14 @@ const aggregatorModules = [
       "公司品牌色、字体一键应用",
       "在线协作与多人审批流程",
     ],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
   },
 ];
 
-const technicalHighlights = [
-  {
-    title: "多模型编排引擎",
-    description:
-      "支持 40+ 国际主流模型热切换，自动根据任务类型匹配最优模型与参数。",
-  },
-  {
-    title: "安全合规体系",
-    description:
-      "多租户隔离、全链路加密、敏感词审查、操作审计与自定义审批流。",
-  },
-  {
-    title: "自研 Prompt 服务器",
-    description:
-      "Prompt 版本管理、质量监测、最佳实践沉淀，保障企业知识资产安全可控。",
-  },
-  {
-    title: "可视化运营大屏",
-    description:
-      "实时监测调用量、成本、转化效果，按部门/项目分账，轻松对齐业务指标。",
-  },
+const valueHighlights = [
+  "一次接入覆盖多模态创作场景，缩短内容生产周期 70%",
+  "SOP 模板、行业素材库实时更新，帮你快速上手 AI 创作",
+  "支持 SaaS、专属实例与私有化部署，满足不同规模团队",
 ];
 
 const interfaceShots = [
@@ -136,12 +109,6 @@ const interfaceShots = [
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
   },
-];
-
-const valueHighlights = [
-  "一次接入覆盖多模态创作场景，缩短内容生产周期 70%",
-  "SOP 模板、行业素材库实时更新，帮你快速上手 AI 创作",
-  "支持 SaaS、专属实例与私有化部署，满足不同规模团队",
 ];
 
 export default function AIAggregationStationPage() {
@@ -209,49 +176,75 @@ export default function AIAggregationStationPage() {
           </div>
         </section>
 
-        {/* Comparison Section */}
+        {/* Comparison Section - Redesigned */}
         <section className="py-16 sm:py-24 bg-muted/20">
-          <div className="container mx-auto px-4 space-y-10">
-            <div className="space-y-4 text-center max-w-3xl mx-auto">
-              <Badge className="w-fit mx-auto bg-primary/10 text-primary">AI 聚合站 vs GPT 镜像系统</Badge>
-              <h2 className="text-3xl sm:text-4xl font-bold">两者如何取长补短？</h2>
+          <div className="container mx-auto px-4">
+            <div className="space-y-4 text-center max-w-3xl mx-auto mb-12">
+              <Badge className="w-fit mx-auto bg-primary/10 text-primary">产品对比</Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold">AI 聚合站 vs GPT 镜像系统</h2>
               <p className="text-muted-foreground">
-                GPT 镜像系统强调“官方生态复刻”，AI 聚合站强调“多模态创作聚合”。了解它们的差异，有助于为团队选择最合适的产品组合。
+                两款产品各有所长，根据您的使用场景选择最合适的解决方案
               </p>
             </div>
-            <div className="grid gap-4">
-              <div className="hidden lg:grid grid-cols-[0.6fr_0.7fr_0.7fr] text-sm font-semibold text-muted-foreground/80 px-6">
-                <span className="flex items-center gap-2">
-                  <Scale className="h-4 w-4" /> 对比维度
-                </span>
-                <span className="text-indigo-600">AI 聚合站</span>
-                <span className="text-primary">GPT 镜像系统</span>
-              </div>
-              <div className="space-y-4">
-                {comparisonPoints.map((point) => (
-                  <Card
-                    key={point.aspect}
-                    className="grid gap-6 lg:grid-cols-[0.6fr_0.7fr_0.7fr] p-6 border-border/60 bg-background/80"
-                  >
-                    <div className="space-y-1">
-                      <p className="text-sm font-semibold text-muted-foreground">{point.aspect}</p>
+            
+            {/* Horizontal Comparison */}
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* AI 聚合站 */}
+              <Card className="border-indigo-200/60 bg-indigo-50/50 dark:bg-indigo-950/10 p-8">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+                      <Layers className="w-6 h-6 text-indigo-600" />
                     </div>
-                    <div className="space-y-2">
-                      <p className="text-sm text-indigo-600 font-medium">AI 聚合站</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{point.aggregator}</p>
+                    <h3 className="text-2xl font-bold text-indigo-600">AI 聚合站</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    多模态创作平台，聚合对话、绘画、视频、PPT 能力，适合内容团队与企业协作
+                  </p>
+                  <div className="space-y-3">
+                    {aggregatorAdvantages.map((advantage) => (
+                      <div key={advantage} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-foreground">{advantage}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
+                    了解 AI 聚合站
+                  </Button>
+                </div>
+              </Card>
+
+              {/* GPT 镜像系统 */}
+              <Card className="border-primary/30 bg-primary/5 p-8">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Sparkles className="w-6 h-6 text-primary" />
                     </div>
-                    <div className="space-y-2">
-                      <p className="text-sm text-primary font-medium">GPT 镜像系统</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{point.mirror}</p>
-                    </div>
-                  </Card>
-                ))}
-              </div>
+                    <h3 className="text-2xl font-bold text-primary">GPT 镜像系统</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    ChatGPT 官方生态复刻，保留原生界面与完整插件能力，适合个人与小团队
+                  </p>
+                  <div className="space-y-3">
+                    {mirrorAdvantages.map((advantage) => (
+                      <div key={advantage} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-foreground">{advantage}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Button variant="outline" className="w-full border-primary/30">
+                    了解镜像系统
+                  </Button>
+                </div>
+              </Card>
             </div>
           </div>
         </section>
 
-        {/* Modules Section */}
+        {/* Modules Section with Images */}
         <section className="py-16 sm:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl text-center mx-auto mb-12 space-y-4">
@@ -261,61 +254,63 @@ export default function AIAggregationStationPage() {
                 对话、绘画、视频、PPT 四大模块既可独立使用，也能通过工作流串联成完整的内容生产流水线。
               </p>
             </div>
-            <div className="grid gap-8 md:grid-cols-2">
-              {aggregatorModules.map((module) => {
+            <div className="space-y-16">
+              {aggregatorModules.map((module, index) => {
                 const Icon = module.icon;
+                const isEven = index % 2 === 0;
                 return (
-                  <Card key={module.title} className="h-full border-border/60 bg-background/80 p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <h3 className="text-xl font-semibold">{module.title}</h3>
+                  <div
+                    key={module.title}
+                    className={`grid gap-8 lg:grid-cols-2 lg:items-center ${
+                      isEven ? "" : "lg:grid-flow-dense"
+                    }`}
+                  >
+                    {/* Image */}
+                    <div className={isEven ? "lg:order-1" : "lg:order-2"}>
+                      <Card className="overflow-hidden border-border/60 bg-background/90">
+                        <div className="relative aspect-[16/10]">
+                          <Image
+                            src={module.image}
+                            alt={module.title}
+                            fill
+                            className="object-cover"
+                            sizes="(min-width: 1024px) 50vw, 100vw"
+                          />
+                        </div>
+                      </Card>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">{module.description}</p>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      {module.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-2">
-                          <BarChart3 className="mt-1 h-4 w-4 text-primary flex-shrink-0" />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
+
+                    {/* Content */}
+                    <div className={isEven ? "lg:order-2" : "lg:order-1"}>
+                      <Card className="border-border/60 bg-background/80 p-8">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                            <Icon className="w-6 h-6 text-primary" />
+                          </div>
+                          <h3 className="text-2xl font-semibold">{module.title}</h3>
+                        </div>
+                        <p className="text-base text-muted-foreground leading-relaxed mb-6">
+                          {module.description}
+                        </p>
+                        <ul className="space-y-3">
+                          {module.bullets.map((bullet) => (
+                            <li key={bullet} className="flex items-start gap-3">
+                              <Check className="mt-1 h-5 w-5 text-primary flex-shrink-0" />
+                              <span className="text-sm text-foreground">{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </Card>
+                    </div>
+                  </div>
                 );
               })}
             </div>
           </div>
         </section>
 
-        {/* Technical Highlights */}
-        <section className="py-16 sm:py-24 bg-muted/20">
-          <div className="container mx-auto px-4">
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-              <div className="space-y-4">
-                <Badge className="w-fit bg-primary/10 text-primary">技术特点</Badge>
-                <h2 className="text-3xl sm:text-4xl font-bold">以企业级架构托底多模态创作</h2>
-                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                  XYAI 在网络、算力、安全、协同四个层面深度打磨，确保 AI 聚合站在大型团队场景下依旧稳定可靠。
-                </p>
-              </div>
-              <div className="grid gap-4">
-                {technicalHighlights.map((item) => (
-                  <Card key={item.title} className="p-6 border-border/60 bg-background">
-                    <div className="flex items-center gap-3">
-                      <Settings2 className="h-5 w-5 text-primary" />
-                      <h3 className="text-lg font-semibold">{item.title}</h3>
-                    </div>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Interface Showcase */}
-        <section className="py-16 sm:py-24">
+        <section className="py-16 sm:py-24 bg-muted/20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl text-center mx-auto mb-12 space-y-4">
               <Badge className="w-fit mx-auto bg-primary/10 text-primary">界面展示</Badge>
