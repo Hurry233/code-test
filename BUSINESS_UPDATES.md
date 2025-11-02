@@ -11,7 +11,7 @@
 **更新位置**: `components/ui/simplified-navbar.tsx`
 
 - **产品服务** 下拉菜单
-  - 大模型镜像：GPT、Claude、Gemini等主流模型
+  - AI聚合站：对话、绘画、视频、PPT一站式创作
   - API网关：统一的大模型API中转
   - 官方代充：ChatGPT官方订阅代充
   - 镜像系统：国内直连ChatGPT官网

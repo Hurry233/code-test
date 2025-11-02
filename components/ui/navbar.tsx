@@ -64,8 +64,8 @@ const Navbar = ({
       url: "#",
       items: [
         {
-          title: "大模型镜像",
-          description: "GPT、Claude、Gemini等主流模型",
+          title: "AI聚合站",
+          description: "对话、绘画、视频、PPT一站式创作",
           icon: <Sparkles className="size-5 shrink-0" />,
           url: "/products/mirror",
         },

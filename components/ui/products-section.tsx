@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 
 const products = [
   {
-    title: "大模型镜像服务",
-    description: "订阅会员即可无限畅享GPT-4、Claude 3.5、Gemini Pro、Midjourney等50+主流模型，无需翻墙直连官方。",
+    title: "AI聚合站",
+    description: "对话、绘画、视频、PPT 一站式创作工作台，聚合 40+ 国际主流模型，多模态协同高效产出。",
     icon: MessageSquare,
     color: "from-emerald-500 to-teal-600",
     href: "/products/mirror",
