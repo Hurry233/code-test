@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { Navbar } from "@/components/ui/navbar";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { CTASection } from "@/components/ui/cta-section";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Code2, Terminal, Zap, Shield, BarChart3 } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Check, Code2, Terminal, Zap, Shield, BarChart3, ArrowRight, Sparkles } from "lucide-react";
 
 const features = [
   "一键接入 Claude Code、GPT-4 Turbo、Gemini 等 50+ 主流模型 API",
@@ -33,6 +35,13 @@ const pricingTiers = [
     description: "适合大规模生产与企业级应用",
     features: ["专用网关", "SLA 保障", "联合研发", "数据合规支持"],
   },
+];
+
+const claudeCodeHighlights = [
+  "5 分钟完成 Claude Code 插件配置，无需复杂环境搭建",
+  "支持 GPT-4、Claude 3.5、Gemini 等多模型自由切换",
+  "完整调用日志与 Token 消耗统计，成本透明可控",
+  "与 Cursor、Continue 等 AI 编程工具无缝集成",
 ];
 
 export default function APIGatewayPage() {
@@ -66,7 +75,7 @@ export default function APIGatewayPage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="rounded-3xl border border-border/60 bg-card/50 p-8 shadow-xl backdrop-blur">
+                <Card className="rounded-3xl border border-border/60 bg-card/50 p-8 shadow-xl backdrop-blur">
                   <div className="space-y-4">
                     <h2 className="text-2xl font-semibold">核心优势</h2>
                     <ul className="space-y-3 text-sm sm:text-base text-muted-foreground">
@@ -94,9 +103,85 @@ response = client.chat.completions.create(
 )`}
                     </pre>
                   </div>
-                </div>
+                </Card>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Claude Code Section */}
+        <section className="py-16 sm:py-24">
+          <div className="container mx-auto px-4">
+            <Card className="border-violet-200/60 bg-gradient-to-br from-violet-50/50 via-background to-background dark:from-violet-950/10 dark:via-background dark:to-background overflow-hidden">
+              <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] p-8 lg:p-12">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20">
+                    <Sparkles className="w-4 h-4 text-violet-600" />
+                    <span className="text-sm font-semibold text-violet-600">Claude Code 一键接入</span>
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl font-bold">
+                    5 分钟配置 Claude Code，解锁 AI 编程助手
+                  </h2>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    通过我们的 API 网关，您可以快速在 VS Code、Cursor、Continue 等开发环境中接入 Claude Code 插件，享受代码补全、重构、调试等智能编程体验。无需科学上网，稳定低延迟。
+                  </p>
+                  <ul className="space-y-3 text-sm">
+                    {claudeCodeHighlights.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <Check className="mt-1 h-4 w-4 text-violet-600 flex-shrink-0" />
+                        <span className="text-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <Button asChild size="lg" className="bg-violet-600 hover:bg-violet-700">
+                      <Link href="/products/api-gateway/claude-code">
+                        查看完整接入流程 <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <Button asChild size="lg" variant="outline" className="border-violet-300">
+                      <Link href="#pricing">
+                        立即充值使用
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+                <div className="relative">
+                  <Card className="border border-border/60 bg-background/80 p-6 space-y-4">
+                    <h3 className="text-lg font-semibold">为什么选择我们的 Claude Code 服务？</h3>
+                    <div className="space-y-4 text-sm text-muted-foreground">
+                      <div className="flex gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center flex-shrink-0">
+                          <span className="text-violet-600 font-semibold">1</span>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground mb-1">国内直连，无需翻墙</p>
+                          <p>我们在国内部署高速节点，延迟低至 50ms，告别科学上网的不稳定。</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center flex-shrink-0">
+                          <span className="text-violet-600 font-semibold">2</span>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground mb-1">多模型切换，灵活调度</p>
+                          <p>支持 Claude 3.5、GPT-4、Gemini 等模型，根据任务自动选择最优方案。</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center flex-shrink-0">
+                          <span className="text-violet-600 font-semibold">3</span>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground mb-1">按量计费，成本透明</p>
+                          <p>只为实际调用付费，后台实时查看每次请求的 Token 消耗与成本明细。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            </Card>
           </div>
         </section>
 
@@ -110,7 +195,7 @@ response = client.chat.completions.create(
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-background rounded-2xl p-6 border border-border/60 hover:shadow-lg transition-shadow">
+              <Card className="bg-background rounded-2xl p-6 border border-border/60 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-primary" />
                 </div>
@@ -118,8 +203,8 @@ response = client.chat.completions.create(
                 <p className="text-muted-foreground">
                   全球多节点部署，智能路由选择最优线路，平均响应时间小于 100ms，保障应用流畅体验。
                 </p>
-              </div>
-              <div className="bg-background rounded-2xl p-6 border border-border/60 hover:shadow-lg transition-shadow">
+              </Card>
+              <Card className="bg-background rounded-2xl p-6 border border-border/60 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-primary" />
                 </div>
@@ -127,8 +212,8 @@ response = client.chat.completions.create(
                 <p className="text-muted-foreground">
                   支持 IP 白名单、密钥加密、访问审计等安全策略，满足金融、政务等行业合规要求。
                 </p>
-              </div>
-              <div className="bg-background rounded-2xl p-6 border border-border/60 hover:shadow-lg transition-shadow">
+              </Card>
+              <Card className="bg-background rounded-2xl p-6 border border-border/60 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <BarChart3 className="w-6 h-6 text-primary" />
                 </div>
@@ -136,13 +221,13 @@ response = client.chat.completions.create(
                 <p className="text-muted-foreground">
                   可视化监控面板，实时查看调用量、成功率、延迟、成本等关键指标，精准掌控运营状况。
                 </p>
-              </div>
+              </Card>
             </div>
           </div>
         </section>
 
         {/* Pricing Section */}
-        <section className="py-16 sm:py-24">
+        <section id="pricing" className="py-16 sm:py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">灵活的计费方案</h2>
