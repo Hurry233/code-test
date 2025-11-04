@@ -118,7 +118,8 @@ export default function AIAggregationStationPage() {
       <main className="min-h-screen bg-background pt-24 pb-32">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-16 sm:py-24">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-background to-background pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/15 via-sky-100/30 to-purple-100/25 dark:from-indigo-500/20 dark:via-background dark:to-background pointer-events-none" />
+          <div className="absolute inset-y-0 right-[10%] hidden h-64 w-64 rounded-full bg-gradient-to-br from-sky-200/50 to-indigo-200/20 blur-3xl lg:block" />
           <div className="container relative mx-auto px-4">
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div className="space-y-6">
@@ -139,17 +140,17 @@ export default function AIAggregationStationPage() {
                     申请产品演示 <Sparkles className="h-4 w-4" />
                   </Button>
                 </div>
-                <ul className="grid gap-3 sm:grid-cols-3 sm:gap-4 text-sm text-muted-foreground">
+                <ul className="grid gap-3 sm:grid-cols-3 sm:gap-4 text-sm text-slate-600 dark:text-slate-300">
                   {valueHighlights.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <Zap className="mt-1 h-4 w-4 text-primary flex-shrink-0" />
+                      <Zap className="mt-1 h-4 w-4 text-indigo-500 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="relative">
-                <Card className="border border-indigo-200/50 bg-card/60 backdrop-blur-xl shadow-xl">
+                <Card className="border-transparent bg-gradient-to-br from-white/90 via-indigo-50/80 to-sky-50/60 dark:from-indigo-950/60 dark:via-background/80 dark:to-background/70 backdrop-blur-xl shadow-xl">
                   <div className="p-8 space-y-6">
                     <h2 className="text-2xl font-semibold">为什么需要 AI 聚合站？</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed">

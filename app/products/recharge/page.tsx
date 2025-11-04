@@ -130,7 +130,8 @@ export default function RechargePage() {
       <main className="min-h-screen bg-background pt-24 pb-32">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-16 sm:py-24">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-cyan-50/30 to-background dark:from-primary/5 dark:via-background dark:to-background" />
+          <div className="absolute inset-y-0 left-[10%] hidden h-72 w-72 rounded-full bg-gradient-to-br from-blue-200/40 to-cyan-100/30 blur-3xl lg:block dark:opacity-0" />
           <div className="container relative mx-auto px-4">
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
               <div className="space-y-6">

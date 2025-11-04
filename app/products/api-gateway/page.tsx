@@ -51,7 +51,8 @@ export default function APIGatewayPage() {
       <main className="min-h-screen bg-background pt-24 pb-32">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-16 sm:py-24">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/35 via-teal-50/25 to-background dark:from-emerald-500/5 dark:via-background dark:to-background" />
+          <div className="absolute inset-y-0 right-[15%] hidden h-80 w-80 rounded-full bg-gradient-to-br from-emerald-200/40 to-teal-100/25 blur-3xl lg:block dark:opacity-0" />
           <div className="container relative mx-auto px-4">
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
               <div className="space-y-6">

@@ -132,7 +132,7 @@ const Navbar = ({
   },
 }: NavbarProps) => {
   return (
-    <section className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/40">
+    <section className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/20">
       <div className="container mx-auto px-4 lg:px-8">
         <nav className="hidden justify-between lg:flex py-4">
           <div className="flex items-center gap-6">
@@ -254,7 +254,7 @@ const renderMenuItem = (item: MenuItem) => {
   return (
     <Link
       key={item.title}
-      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+      className="inline-flex h-10 w-max items-center justify-center rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground hover:bg-primary/10"
       href={item.url}
     >
       {item.title}
