@@ -20,66 +20,89 @@ import {
 
 const steps = [
   {
-    title: "安装 Claude Code 插件",
+    title: "安装 Claude Code 所需环境",
     description:
-      "在 VS Code、Cursor 或 Continue 中打开扩展市场，搜索 “Claude Code” 并完成安装。无需额外代理设置。",
+      "Claude Code 需要 Node.js 环境来运行。请打开终端，根据你的操作系统执行相应安装命令。",
     icon: Download,
     commands: [
       {
-        label: "VS Code",
-        code: "Extensions → 搜索 Claude Code → Install",
+        label: "安装Node.js",
+        code: (
+          <>
+          确认系统版本 → 打开{" "}
+          <a href="https://nodejs.org/zh-cn/download" target="_blank" rel="noopener noreferrer" className="underline text-blue-600 hover:text-blue-700" >
+          Node.js官网
+          </a>{" "}
+          → 下载对应版本
+          </>
+          ),
       },
       {
-        label: "Cursor",
-        code: "Cmd/Ctrl + Shift + P → Install Extension → Claude Code",
+        label: "验证Node.js版本,需高于18.0.0",
+        code: "npm -v && node -v",
       },
     ],
   },
   {
-    title: "配置 API 网关地址",
+    title: "一键安装Claude Code",
     description:
-      "在插件的设置面板中，将默认的 Anthropic 端点替换为 XYAI 提供的统一网关地址，并保存。",
+      "在终端中执行以下命令，一键安装Claude Code。",
     icon: Plug,
     commands: [
       {
-        label: "Base URL",
-        code: "https://api.your-gateway.com/anthropic/v1",
+        label: "一键安装Claude Code",
+        code: "npm install -g @anthropic-ai/claude-code",
       },
       {
-        label: "Model",
-        code: "claude-3.5-sonnet",
+        label: "验证安装是否成功",
+        code: "claude -version",
       },
     ],
   },
   {
     title: "创建并绑定 API Key",
-    description:
-      "在 XYAI 控制台生成专属密钥，复制后粘贴到插件的 API Key 输入框，同时勾选保存到安全存储。",
+    description:(
+      <>
+      打开 {" "}
+      <a href="https://api.pro365.top" target="_blank" rel="noopener noreferrer" className="underline text-blue-600 hover:text-blue-700" >
+      大模型API网关
+      </a>{" "}
+      → 注册并登录 → 创建{" "}
+      <a href="https://api.pro365.top/console/token" target="_blank" rel="noopener noreferrer" className="underline text-blue-600 hover:text-blue-700" >
+      API Key
+      </a>{" "}
+      → 复制API Key
+      </>
+      ),
     icon: ShieldCheck,
     commands: [
       {
-        label: "Key",
-        code: "xyai-sk-live-xxxxxxxxxxxxxxxx",
+        label: "设置API Key上限额度",
+        code: "打开“无限额度”按钮，将API Key上限额度与账户余额自动匹配",
       },
       {
-        label: "Dashboard",
-        code: "控制台 → API 访问 → 新建密钥",
+        label: "合理预存账户余额",
+        code: "及时充值并关注自己的账户余额，避免因余额不足导致Claude Code无法正常使用",
       },
     ],
   },
   {
-    title: "验证连接并开始使用",
+    title: "在Claude Code中配置API Key",
     description:
-      "打开任意文件，使用 Chat 面板发送 “请帮我解释这段代码”，确认 Claude Code 已成功响应。",
+      "使用npx zcf插件配置API URL与API Key，并保存配置 → 在项目目录中启动Claude Code → 开始使用",
     icon: Terminal,
     commands: [
       {
-        label: "快捷命令",
-        code: "Cmd/Ctrl + Shift + I → Chat with Claude",
+        label: "启动终端，输入命令启动zcf插件",
+        code: "npx zcf",
       },
       {
-        label: "示例提示",
-        code: "请优化这段 TypeScript 代码的性能",
+        label: "选择3，配置API",
+        code: "API Url: https://api.pro365.top/v1, \n API Key: 你的API Key",
+      },
+      {
+        label: "启动claude code",
+        code: "在项目目录中打开终端，输入“claude”命令 → 开始使用",
       },
     ],
   },
@@ -87,21 +110,21 @@ const steps = [
 
 const customisations = [
   {
-    title: "切换模型与推理策略",
+    title: "Claude Code工作流与MCP服务",
     description:
-      "在设置中自定义默认模型、推理温度、最大 Token 等参数，按场景切换 Claude 3.5 / GPT-4o。",
+      "Claude Code 支持多种工作流与MCP服务，如代码补全、代码重构、代码调试等。使用zcf插件可快速配置工作流与MCP服务",
     icon: Settings2,
   },
   {
-    title: "自定义企业 API",
+    title: "CLAUDE.md",
     description:
-      "基于 XYAI 网关创建企业级路由策略，覆盖调用限流、白名单校验与成本中心统计。",
+      "在claude Code中输入“/init”命令，初始化项目 AI上下文，生成/更新根级与模块级CLAUDE.md索引，支持自行修改，用于指引Claude Code",
     icon: ListChecks,
   },
   {
     title: "安全与日志留痕",
     description:
-      "与网关实时日志打通，记录操作人、请求耗时、Token 消耗等信息，支持导出审计。",
+      "与API网关实时日志打通，记录API Key使用情况：请求耗时、请求次数、Token 消耗等信息，实时审计项目消耗。（只记录tokens消耗，不记录请求内容，确保隐私安全）",
     icon: ShieldCheck,
   },
 ];
@@ -120,10 +143,10 @@ export default function ClaudeCodeGuidePage() {
                 Claude Code 接入手册
               </Badge>
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-                从安装到自定义 API：Claude Code 一站式配置流程
+                利用AI驱动生产力，每个人都能“0代码”开发复杂应用
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                按照下面 4 个步骤，5 分钟内即可在本地开发环境中启用 Claude Code 插件。我们提供统一的网关地址与密钥管理，让模型能力稳定、低延迟地服务于你的编码工作流。
+                按照下面 4 个步骤，5 分钟内即可在本地开发环境中启用 Claude Code 。我们提供统一的网关地址与密钥管理，让Claude模型能力稳定、低延迟地服务于你的编码工作流。
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-violet-600 hover:bg-violet-700">
@@ -133,7 +156,7 @@ export default function ClaudeCodeGuidePage() {
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-violet-200">
                   <Link href="#customize">
-                    跳转到自定义 API 指南
+                    跳转到Claude Code进阶指南
                   </Link>
                 </Button>
               </div>
@@ -202,10 +225,10 @@ export default function ClaudeCodeGuidePage() {
         <section id="customize" className="py-16 sm:py-24 bg-muted/20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
-              <Badge className="w-fit mx-auto bg-primary/10 text-primary">企业级自定义</Badge>
-              <h2 className="text-3xl sm:text-4xl font-bold">自定义 API 接入与团队治理</h2>
+              <Badge className="w-fit mx-auto bg-primary/10 text-primary">Claude Code进阶指南</Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold">让你的Claude Code更智能</h2>
               <p className="text-muted-foreground">
-                完成基础配置后，你可以根据团队需要扩展更多能力，提升安全性与协作效率。
+                完成基础配置后，你可以根据项目需求，使用CLAUDE.md索引等功能，让Claude Code更智能地完成项目开发，提高效率节省成本。
               </p>
             </div>
             <div className="grid gap-8 lg:grid-cols-3">
