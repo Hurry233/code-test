@@ -17,9 +17,9 @@ import { Sparkles, ShieldCheck, Rocket, Github, Twitter, Linkedin } from "lucide
 const displayCards = [
   {
     icon: <Sparkles className="size-4 text-violet-300" />,
-    title: "大模型镜像",
-    description: "GPT/Claude/Gemini等50+模型",
-    date: "会员畅享",
+    title: "AI聚合站",
+    description: "对话、绘画、视频、PPT 一站式服务",
+    date: "无限畅想",
     iconClassName: "text-violet-500",
     titleClassName: "text-violet-600 dark:text-violet-400",
     className:
@@ -27,8 +27,8 @@ const displayCards = [
   },
   {
     icon: <ShieldCheck className="size-4 text-emerald-300" />,
-    title: "API网关",
-    description: "统一接口按量计费",
+    title: "大模型API网关",
+    description: "GPT/Claude/Gemini等50+国际主流模型",
     date: "灵活扩展",
     iconClassName: "text-emerald-500",
     titleClassName: "text-emerald-600 dark:text-emerald-400",
@@ -37,9 +37,9 @@ const displayCards = [
   },
   {
     icon: <Rocket className="size-4 text-sky-300" />,
-    title: "定制服务",
-    description: "工作流、知识库、模型微调",
-    date: "专业团队",
+    title: "ChatGPT镜像",
+    description: "国内直连ChatGPT，使用大厂原生服务",
+    date: "超低价预售",
     iconClassName: "text-sky-500",
     titleClassName: "text-sky-600 dark:text-sky-400",
     className:
@@ -60,13 +60,13 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-16 max-w-3xl text-center space-y-4">
               <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
-                核心能力
+                核心服务
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-                一站式接入全球顶尖AI
+                一站式使用顶尖AI能力
               </h2>
               <p className="text-lg text-muted-foreground">
-                覆盖大模型镜像、统一网关、官方代充和定制化服务，满足企业与个人的多样化场景需求。
+                覆盖AI聚合系统、统一API网关、ChatGPT官方代充和镜像服务，满足企业与个人的多样化场景需求。
               </p>
             </div>
             <div className="flex justify-center">
