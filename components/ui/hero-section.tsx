@@ -53,7 +53,7 @@ export function HeroSection() {
               </span>
               <br />
               <WordRotate
-                words={["GPT-4", "Claude", "Gemini", "Midjourney"]}
+                words={["GPT-5", "Claude-4.5", "Gemini-2.5-Pro", "Midjourney", "Sora", "Nano-Banana", "Suno", "Gork"]}
                 className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-primary/60"
                 duration={3000}
               />
@@ -78,7 +78,7 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row items-start gap-4 pt-4"
             >
               <Button size="lg" className="group">
-                立即开始
+                立即使用
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" className="bg-background/50 backdrop-blur-sm">
@@ -94,8 +94,8 @@ export function HeroSection() {
               className="grid grid-cols-3 gap-8 pt-8"
             >
               {[
-                { value: "50+", label: "接入主流大模型" },
-                { value: "3min", label: "一键配置上线" },
+                { value: "200+", label: "国际主流大模型" },
+                { value: "900+", label: "稳定运行天数" },
                 { value: "7x24h", label: "企业级运维保障" },
               ].map((stat, index) => (
                 <div key={index}>
