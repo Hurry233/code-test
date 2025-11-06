@@ -18,19 +18,19 @@ import {
 } from "lucide-react";
 
 const aggregatorAdvantages = [
-  "40+ 主流模型一站式聚合",
+  "使用官方API接入，支持多个国际主流模型",
   "对话、绘画、视频、PPT 全覆盖",
-  "企业级工作流编排",
-  "多团队协作与权限管理",
-  "按需灵活扩展",
+  "无感切换Claude-4.5、Gemini-2.5-Pro等顶尖模型",
+  "支持Midjourney、Sora、Nano-banana等图像/视频生成模型",
+  "综合成本更低",
 ];
 
 const mirrorAdvantages = [
   "100% 还原 ChatGPT 官方体验",
-  "完整插件生态与代码解释器",
-  "熟悉的界面，零学习成本",
+  "完整GPTs生态与代码解释器",
+  "支持GPT-5-Thinking、GPT-5-Pro顶级模型",
   "会员制不限次数使用",
-  "对抗降智策略保障",
+  "智能网关系统全力对抗降智问题",
 ];
 
 const aggregatorModules = [
@@ -38,11 +38,12 @@ const aggregatorModules = [
     icon: MessageSquare,
     title: "AI 对话",
     description:
-      "聚合 GPT-4 Turbo、Claude 3.5、Gemini 1.5 Pro 等对话模型，内置行业 Prompt 模板与知识库接入。",
+      "聚合 GPT-5系列、Claude-4.5系列、Gemini-2.5-Pro系列、Gork系列等众多国际主流模型，一键无感切换，支持上下文连续对话，保障对话质量。",
     bullets: [
-      "智能客服、营销文案、数据分析一体化",
-      "知识库一键绑定，支持上下文检索",
-      "会话看板与任务流转，保障团队协同",
+      "多个国际主流AI大模型最新版本",
+      "支持联网搜索、深度思考",
+      "支持文档读取、总结归纳",
+      "支持代码生成、支持实时渲染与在线预览HTML页面",
     ],
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80",
   },
@@ -50,11 +51,12 @@ const aggregatorModules = [
     icon: PenTool,
     title: "AI 绘画",
     description:
-      "集成 Midjourney、Flux、Stable Diffusion XL，提供品牌视觉、海报、产品设计的定制化生成。",
+      "集成 Midjourney、Nano-banana、Flux等图像生成模型，提供品牌视觉、海报、产品设计的定制化生成。",
     bullets: [
-      "Prompt 工作坊与风格库管理",
-      "批量生成与尺寸自适应",
-      "版权审核与敏感内容拦截",
+      "多种绘画风格，自定义Prompt",
+      "图片编辑、二次修改",
+      "超高清图片生成",
+      "支持商业使用",
     ],
     image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1600&q=80",
   },
@@ -62,23 +64,24 @@ const aggregatorModules = [
     icon: Clapperboard,
     title: "AI 视频",
     description:
-      "从脚本生成、分镜设计到视频成片，全流程 AI 驱动，适配短视频与长内容。",
+      "Sora模型提供强大的视频生产力，简单的文字描述即可创作高质量的视频短片，支持多语言、多场景、多风格。",
     bullets: [
-      "多语言脚本一键生成",
-      "AI 配音、字幕、背景音乐自动匹配",
-      "与主流剪辑软件无缝衔接",
+      "强大的自然语言理解能力",
+      "自带配音、背景音乐、字幕",
+      "更加真实的AI视频生成效果",
+      "支持商业使用"
     ],
     image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80",
   },
   {
     icon: Layers,
-    title: "AI PPT",
+    title: "AI PPT（Beta）",
     description:
-      "支持一键生成商业计划书、培训课件、汇报材料，模板与品牌规范自动匹配。",
+      "通过自然语言简单描述PPT内容或需求，即可自动生成PPT，支持多语言、多场景、多风格。",
     bullets: [
-      "导入大纲、Excel 即刻出稿",
-      "公司品牌色、字体一键应用",
-      "在线协作与多人审批流程",
+      "自动生成大纲",
+      "支持在线编辑、下载导出",
+      "更多功能持续迭代中",
     ],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
   },
@@ -92,20 +95,20 @@ const valueHighlights = [
 
 const interfaceShots = [
   {
-    title: "多模态统一控制台",
-    description: "模块化布局，快速切换对话、绘画、视频、PPT 工作区。",
+    title: "多模态视觉识别",
+    description: "支持图像、视频、文件分析，快速理解内容，降低沟通成本。",
     image:
       "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1600&q=80",
   },
   {
-    title: "创作流程编排",
-    description: "拖拽式工作流连线，自动触发生成、审核与发布。",
+    title: "创成式图片生成",
+    description: "支持Midjourney、Sora、Nano-banana等图像/视频生成模型，快速生成高质量图片/视频。",
     image:
       "https://images.unsplash.com/photo-1523475472560-418a6e9403cc?auto=format&fit=crop&w=1600&q=80",
   },
   {
-    title: "实时数据监控",
-    description: "多维度图表呈现模型调用、创作进度、业务效果。",
+    title: "无感切换国际主流模型",
+    description: "支持GPT-5系列、Claude-4.5系列、Gemini-2.5-Pro系列、Gork系列等众多国际主流模型，持续跟进最新版本。",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
   },
@@ -124,13 +127,13 @@ export default function AIAggregationStationPage() {
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div className="space-y-6">
                 <Badge className="w-fit bg-indigo-500/10 text-indigo-600 dark:text-indigo-300">
-                  AI 聚合站 · 全模态创作中心
+                  全模态创作中心
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-                  AI 聚合站：一站式激活对话、绘画、视频、PPT 创作力
+                  AI 聚合服务平台
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  面对日益复杂的内容生产诉求，AI 聚合站以多模型编排为底座，将对话生成、视觉创作、视频脚本与 PPT 报告统一在一个工作台，让团队高效协同、快速交付。
+                  面对日益复杂的内容生产诉求，AI 聚合站以多模型编排为底座，将不同模型的对话生成、图片创作、文件分析与视频创作融合在一个工作台，提高AI使用效率，降低综合成本。
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button size="lg" className="gap-2">
@@ -152,21 +155,21 @@ export default function AIAggregationStationPage() {
               <div className="relative">
                 <Card className="border-transparent bg-gradient-to-br from-white/90 via-indigo-50/80 to-sky-50/60 dark:from-indigo-950/60 dark:via-background/80 dark:to-background/70 backdrop-blur-xl shadow-xl">
                   <div className="p-8 space-y-6">
-                    <h2 className="text-2xl font-semibold">为什么需要 AI 聚合站？</h2>
+                    <h2 className="text-2xl font-semibold">什么是 AI 聚合系统？</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      当团队需要在同一时间处理大量文案、海报、短视频与汇报材料时，传统工具链容易割裂效率。AI 聚合站通过统一登录、统一资产库、统一工作流，让多模态创作真正形成闭环。
+                      AI 聚合系统是一个多模态创作平台，使用官方API接入多个国际主流模型，让用户能低成本、一站式使用多种类型的大模型，降低综合成本。
                     </p>
                     <div className="grid gap-4">
                       <div className="rounded-2xl bg-muted/60 p-4">
-                        <p className="text-sm font-semibold text-foreground">多模型聚合</p>
+                        <p className="text-sm font-semibold text-foreground">多种对话大模型</p>
                         <p className="text-sm text-muted-foreground">
-                          GPT、Claude、Gemini、Midjourney、Runway、Designify…一次接入，持续更新。
+                          GPT-5系列、Claude-4.5系列、Gemini-2.5-Pro系列、Gork系列等众多国际主流模型，持续跟进最新版本
                         </p>
                       </div>
                       <div className="rounded-2xl bg-muted/60 p-4">
-                        <p className="text-sm font-semibold text-foreground">企业级协作</p>
+                        <p className="text-sm font-semibold text-foreground">多模态创作模型</p>
                         <p className="text-sm text-muted-foreground">
-                          席位管理、权限分级、流程审批与成果留痕，满足大型组织的治理需求。
+                          众多多模态功能，包含视觉识别、文件分析、深度思考、PPT创作，支持Midjourney、Sora、Nano-banana等图像/视频生成模型
                         </p>
                       </div>
                     </div>
@@ -200,7 +203,7 @@ export default function AIAggregationStationPage() {
                     <h3 className="text-2xl font-bold text-indigo-600">AI 聚合站</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    多模态创作平台，聚合对话、绘画、视频、PPT 能力，适合内容团队与企业协作
+                    多模态创作平台，聚合对话、绘画、视频、PPT 能力，适合需要多模态创作的用户
                   </p>
                   <div className="space-y-3">
                     {aggregatorAdvantages.map((advantage) => (
@@ -210,9 +213,9 @@ export default function AIAggregationStationPage() {
                       </div>
                     ))}
                   </div>
-                  <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
-                    了解 AI 聚合站
-                  </Button>
+                  <div className="text-sm text-muted-foreground leading-relaxed">  
+                    总结：整体使用体验不如官方大厂原生系统，但综合成本更低，且支持多个国际主流模型，满足多场景需求
+                  </div>
                 </div>
               </Card>
 
@@ -226,7 +229,7 @@ export default function AIAggregationStationPage() {
                     <h3 className="text-2xl font-bold text-primary">GPT 镜像系统</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    ChatGPT 官方生态复刻，保留原生界面与完整插件能力，适合个人与小团队
+                    ChatGPT 官方镜像，使用原生界面与完整插件能力，适合完全使用ChatGPT的用户
                   </p>
                   <div className="space-y-3">
                     {mirrorAdvantages.map((advantage) => (
@@ -236,9 +239,9 @@ export default function AIAggregationStationPage() {
                       </div>
                     ))}
                   </div>
-                  <Button variant="outline" className="w-full border-primary/30">
-                    了解镜像系统
-                  </Button>
+                  <div className="text-sm text-muted-foreground leading-relaxed">  
+                    总结：官方原厂体验更好，能使用官方顶尖模型，但存在官方降智策略，可能影响使用体验。
+                  </div>
                 </div>
               </Card>
             </div>
@@ -250,9 +253,9 @@ export default function AIAggregationStationPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl text-center mx-auto mb-12 space-y-4">
               <Badge className="w-fit mx-auto bg-primary/10 text-primary">四大核心能力模块</Badge>
-              <h2 className="text-3xl sm:text-4xl font-bold">覆盖全链路内容生产需求</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold">合理利用不同模型的优势</h2>
               <p className="text-muted-foreground text-lg">
-                对话、绘画、视频、PPT 四大模块既可独立使用，也能通过工作流串联成完整的内容生产流水线。
+                将不同的模型优势融合在一起，提高AI使用效率，实现<span className="text-primary">“1+1&gt;2”</span>的效果
               </p>
             </div>
             <div className="space-y-16">
@@ -317,7 +320,7 @@ export default function AIAggregationStationPage() {
               <Badge className="w-fit mx-auto bg-primary/10 text-primary">界面展示</Badge>
               <h2 className="text-3xl sm:text-4xl font-bold">所见即所得的统一工作台</h2>
               <p className="text-muted-foreground text-lg">
-                通过可视化操作界面，将复杂的模型调用、工作流编排与运营数据呈现得直观易懂。
+                灵活的侧边栏和插件系统，简化与AI沟通的流程，提高使用效率
               </p>
             </div>
             <div className="grid gap-8 lg:grid-cols-3">
@@ -349,17 +352,17 @@ export default function AIAggregationStationPage() {
               <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
                 <div className="space-y-4">
                   <Badge className="bg-primary text-primary-foreground">立即体验 AI 聚合站</Badge>
-                  <h2 className="text-3xl sm:text-4xl font-bold">注册免费试用，5 分钟搭建属于你的 AI 创作中心</h2>
+                  <h2 className="text-3xl sm:text-4xl font-bold">注册免费试用，购买合适的套餐享受更便捷的AI服务</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    试用期间即可获得 300 元模型调用额度、行业模板包与一对一顾问辅导。支持快速迁移现有账号与内容资产。
+                    推荐购买月/季度/年度会员套餐，会员期间无次数限制，让每次对话都更加轻松高效。所有套餐均支持开具增值税发票。
                   </p>
                 </div>
                 <div className="flex flex-col gap-4">
                   <Button size="lg" className="gap-2">
-                    立即免费注册 <ArrowRight className="h-4 w-4" />
+                    注册试用 <ArrowRight className="h-4 w-4" />
                   </Button>
                   <Button size="lg" variant="outline" className="gap-2">
-                    预约顾问答疑 <Database className="h-4 w-4" />
+                    联系客服 <Database className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
