@@ -23,7 +23,7 @@ export function SiteFooter() {
         { href: "/terms", label: "服务条款" },
       ]}
       copyright={{
-        text: "© 2024 AI 大模型服务平台",
+        text: "© 2025 GPTW 大模型服务平台",
         license: "All rights reserved",
       }}
     />

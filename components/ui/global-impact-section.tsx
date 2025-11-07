@@ -40,7 +40,7 @@ export function GlobalImpactSection() {
               transition={{ duration: 0.5 }}
               className="text-sm font-medium text-primary"
             >
-              Globally trusted
+              多设施保障
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export function GlobalImpactSection() {
               transition={{ delay: 0.1, duration: 0.6 }}
               className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight"
             >
-              Scaling responsibly across the world
+              全球多地部署 负载均衡
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -58,8 +58,7 @@ export function GlobalImpactSection() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-base sm:text-lg text-muted-foreground leading-relaxed"
             >
-              Our platform powers teams in research, education, finance, healthcare, and creative industries 
-              across more than 175 countries. The world map visualizes live collaboration routes.
+              我们的服务采用集群化部署策略，全球多地部署节点，提高容灾能力，确保服务稳定可靠。
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -70,20 +69,20 @@ export function GlobalImpactSection() {
             >
               {[
                 {
-                  value: "2.3M",
-                  label: "Developers building on our APIs",
+                  value: "11k+",
+                  label: "平台活跃用户",
                 },
                 {
-                  value: "98%",
-                  label: "Satisfaction score across enterprise clients",
+                  value: "99.8%",
+                  label: "全年服务可用性",
                 },
                 {
-                  value: "500+",
-                  label: "Safety & policy partners globally",
+                  value: "20+",
+                  label: "平台每年大版本更新次数",
                 },
                 {
-                  value: "24/7",
-                  label: "Real-time monitoring and support",
+                  value: "98.5%",
+                  label: "用户满意度",
                 },
               ].map((stat) => (
                 <div key={stat.value} className="space-y-2">

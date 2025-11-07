@@ -78,7 +78,7 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row items-start gap-4 pt-4"
             >
               <Button size="lg" className="group">
-                立即使用
+                立即开始
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" className="bg-background/50 backdrop-blur-sm">

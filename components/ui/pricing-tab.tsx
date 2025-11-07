@@ -44,7 +44,7 @@ export function Tab({
             selected && "bg-muted"
           )}
         >
-          Save 35%
+          不限对话次数
         </Badge>
       )}
     </button>

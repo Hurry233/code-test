@@ -41,7 +41,7 @@ export function CTASection() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
             >
-              加入我们的平台，畅享GPT-4、Claude、Gemini等全球顶尖AI模型，
+              加入我们的平台，畅享GPT-5、Claude-4.5、Gemini-2.5-Pro等国际主流AI模型，
               无论是个人创作还是企业应用，我们都能提供最适合的解决方案。
             </motion.p>
             <motion.div
@@ -56,7 +56,7 @@ export function CTASection() {
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" className="bg-background/80 backdrop-blur-sm">
-                咨询定制服务
+                咨询客服
               </Button>
             </motion.div>
           </div>

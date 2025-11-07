@@ -5,24 +5,24 @@ import { motion } from "framer-motion";
 export function ResearchShowcase() {
   const highlightCards = [
     {
-      title: "行业解决方案蓝图",
-      caption: "场景设计",
-      description: "结合金融、教育、制造、政务等行业痛点，输出可落地的大模型应用方案。",
+      title: "完整的API接入文档",
+      caption: "快速接入",
+      description: "提供详细的API接入文档，支持多种主流API接口格式，并具备统一兼容性，助力开发者快速接入。",
     },
     {
-      title: "安全合规白皮书",
-      caption: "合规研究",
-      description: "从数据治理、访问控制、合规审计多维度，保障企业级大模型应用安全可控。",
+      title: "灵活的API计费系统",
+      caption: "按量计费",
+      description: "随用随充，按量计费，每次调用均有详细日志记录，便于开发者进行成本控制和优化。",
     },
     {
-      title: "AI 生产力工具包",
-      caption: "工具集",
-      description: "提供工作流、知识库、智能助手等模板，帮助团队快速搭建专属 AI 能力。",
+      title: "最新AI模型支持",
+      caption: "持续更新",
+      description: "支持GPT-5、Claude-4.5、Gemini-2.5-Pro等最新AI模型，持续更新，助力开发者保持技术领先。",
     },
     {
-      title: "部署实施手册",
-      caption: "上线指南",
-      description: "覆盖镜像部署、API 接入、运维监控等环节，确保项目高效上线并稳定运行。",
+      title: "模型微调",
+      caption: "定制化服务",
+      description: "支持模型微调，接入个人/企业/行业知识库，提高在特定领域的专业性。",
     },
   ];
 
@@ -39,7 +39,7 @@ export function ResearchShowcase() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 text-sm font-medium text-primary"
             >
-              行业洞察
+              面向开发者
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export function ResearchShowcase() {
               transition={{ delay: 0.1, duration: 0.6 }}
               className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight"
             >
-              从场景到落地的全链路赋能
+              提供一站式的API接入解决方案
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export function ResearchShowcase() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-base sm:text-lg text-muted-foreground leading-relaxed"
             >
-              我们深入垂直行业场景，结合技术能力与行业洞察，输出可落地的大模型应用方案，并提供从接入到运维的全流程支持。
+              围绕多元化的AI使用需求，提供从文本到图像、视频、视觉理解、语音、多模态协同等一站式解决方案
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -68,20 +68,20 @@ export function ResearchShowcase() {
             >
               {[
                 {
-                  title: "行业顾问陪伴",
-                  description: "资深架构师与行业专家联合调研，明确业务目标与实施路径。"
+                  title: "文本生成",
+                  description: "支持GPT-5、Claude-4.5、Gemini-2.5-Pro等最新AI模型，更强大的语义理解和思考能力，更长的上下文长度，更精准的回答质量。"
                 },
                 {
-                  title: "解决方案设计",
-                  description: "定制镜像接入、API 网关、知识库、工作流、微调等组合方案。"
+                  title: "多模态能力",
+                  description: "支持图像、视频理解，快速完成文件分析，图像生成与编辑"
                 },
                 {
-                  title: "交付与培训",
-                  description: "提供环境部署、权限配置、团队培训、运营手册等配套服务。"
+                  title: "定向功能模型",
+                  description: "提供Midjourney、Sora、Nano-banana等图像/视频生成模型API接口，一键接入，快速生成高质量图片/视频。"
                 },
                 {
-                  title: "持续运营优化",
-                  description: "监控效果指标，持续调优模型与流程，保障业务成果。"
+                  title: "Claude Code",
+                  description: "一键接入Claude Code，无需科学上网，稳定低延迟。节省70%以上的开发成本。"
                 }
               ].map((item) => (
                 <div key={item.title} className="space-y-2">

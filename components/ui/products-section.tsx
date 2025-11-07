@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const products = [
   {
     title: "AI聚合站",
-    description: "对话、绘画、视频、PPT 一站式创作工作台，聚合 40+ 国际主流模型，多模态协同高效产出。",
+    description: "对话、绘画、视频、PPT 一站式创作工作台，聚合 10+ 国际主流模型，多模态协同高效产出。",
     icon: MessageSquare,
     color: "from-emerald-500 to-teal-600",
     href: "/products/mirror",
@@ -30,7 +30,7 @@ const products = [
   },
   {
     title: "ChatGPT镜像系统",
-    description: "国内直连ChatGPT官网，无需魔法上网，包含GPT-4、DALL-E 3、插件等完整生态。",
+    description: "国内直连ChatGPT官网镜像，无需魔法上网，享受官网的AI对话体验，具备完整的隐私隔离机制。",
     icon: Mic,
     color: "from-blue-500 to-cyan-600",
     href: "/products/mirror-system",
@@ -52,7 +52,7 @@ export function ProductsSection() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4"
           >
-            覆盖全场景的核心服务
+            覆盖全场景的AI应用服务
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export function ProductsSection() {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="text-base sm:text-lg text-muted-foreground"
           >
-            从镜像服务到API网关，从官方代充到镜像系统，帮助您快速接入并扩展全球顶尖大模型。
+            围绕多元化的AI使用需求，提供一站式解决方案
           </motion.p>
         </div>
 
@@ -126,18 +126,7 @@ export function ProductsSection() {
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <Button size="lg" className="group">
-            查看全部服务
-            <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Button>
-        </motion.div>
+        
       </div>
     </section>
   );

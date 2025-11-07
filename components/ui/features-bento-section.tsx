@@ -17,7 +17,7 @@ export function FeaturesBentoSection() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 text-sm font-medium text-primary"
           >
-            平台特色
+             
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export function FeaturesBentoSection() {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="mt-4 text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight"
           >
-            开箱即用的全栈能力
+            用自然语言驱动AI生产力
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export function FeaturesBentoSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mt-4 text-base sm:text-lg text-muted-foreground"
           >
-            从接入配置到监控运维，从会员服务到定制开发，全方位满足您的大模型应用需求
+            多个AI应用场景，覆盖学术科研、自媒体创作、金融、教育医疗等，全方位满足您的大模型应用需求
           </motion.p>
         </div>
 

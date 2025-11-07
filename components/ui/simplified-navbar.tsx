@@ -26,14 +26,14 @@ const navItems: NavItem[] = [
       { name: "大模型镜像", href: "/products/mirror", description: "GPT、Claude、Gemini等主流模型" },
       { name: "API网关", href: "/products/api-gateway", description: "统一的大模型API中转" },
       { name: "官方代充", href: "/products/recharge", description: "ChatGPT官方订阅代充" },
-      { name: "镜像系统", href: "/products/mirror-system", description: "国内直连ChatGPT官网" },
+      { name: "镜像系统", href: "/products/mirror-system", description: "国内直连ChatGPT官网镜像" },
     ],
   },
   {
     name: "定制服务",
     subItems: [
-      { name: "创作工作流", href: "/services/workflow", description: "自动化创作流程" },
-      { name: "知识库搭建", href: "/services/knowledge-base", description: "企业专属知识库" },
+      { name: "Agent工作流", href: "/services/workflow", description: "创作自动化工作流程" },
+      { name: "知识库搭建", href: "/services/knowledge-base", description: "定制化专属知识库" },
       { name: "模型微调", href: "/services/fine-tuning", description: "定制化模型训练" },
     ],
   },
