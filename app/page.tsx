@@ -2,7 +2,7 @@ import { Navbar } from "@/components/ui/navbar";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { HeroSection } from "@/components/ui/hero-section";
 import { Logos3 } from "@/components/ui/logos3";
-import { InnovationSection } from "@/components/ui/innovation-section";
+
 import { ProductsSection } from "@/components/ui/products-section";
 import { FeaturesBentoSection } from "@/components/ui/features-bento-section";
 import { ResearchShowcase } from "@/components/ui/research-showcase";
@@ -54,7 +54,7 @@ export default function Home() {
       <main className="overflow-hidden pt-24">
         <HeroSection />
         <Logos3 heading="Trusted by leading technology companies" />
-        <InnovationSection />
+
         <ProductsSection />
         <section className="py-24 sm:py-32">
           <div className="container mx-auto px-4">
