@@ -5,6 +5,7 @@ export { Spotlight } from "./spotlight";
 export { WorldMap } from "./map";
 export { WorldMapDemo } from "./map-demo";
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion";
+export { Badge, badgeVariants } from "./badge";
 export { Button, buttonVariants } from "./button";
 export { Input } from "./input";
 export { Label } from "./label";
@@ -35,6 +36,9 @@ export {
 export { Navbar1 } from "./shadcnblocks-com-navbar1";
 export { Navbar1Demo } from "./shadcnblocks-com-navbar1-demo";
 export { SimplifiedNavbar } from "./simplified-navbar";
+export { Navbar } from "./navbar";
+export { Footer } from "./footer";
+export { SiteFooter } from "./site-footer";
 export { ThemeToggle } from "./theme-toggle";
 export { HeroSection } from "./hero-section";
 export { InnovationSection } from "./innovation-section";
@@ -59,5 +63,8 @@ export {
 } from "./carousel";
 export { Logos3 } from "./logos3";
 export { Logos3Demo } from "./demo";
+export { PricingDemo } from "./pricing-demo";
+export { Timeline } from "./timeline";
+export { TimelineDemo } from "./timeline-demo";
 export { WordRotate } from "./word-rotate";
 export { WordRotateDemo } from "./word-rotate-demo";

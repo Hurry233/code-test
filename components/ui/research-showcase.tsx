@@ -5,24 +5,24 @@ import { motion } from "framer-motion";
 export function ResearchShowcase() {
   const highlightCards = [
     {
-      title: "Interactive prototypes",
-      caption: "Live demos",
-      description: "Experience breakthrough interfaces generated directly from our latest model checkpoints.",
+      title: "完整的API接入文档",
+      caption: "快速接入",
+      description: "提供详细的API接入文档，支持多种主流API接口格式，并具备统一兼容性，助力开发者快速接入。",
     },
     {
-      title: "Alignment insights",
-      caption: "Research briefs",
-      description: "Transparent reporting keeps every experiment grounded in safety metrics and human feedback.",
+      title: "灵活的API计费系统",
+      caption: "按量计费",
+      description: "随用随充，按量计费，每次调用均有详细日志记录，便于开发者进行成本控制和优化。",
     },
     {
-      title: "Open collaborations",
-      caption: "Global labs",
-      description: "Join partner institutions shaping benchmarks for reasoning, robotics, and multimodal learning.",
+      title: "最新AI模型支持",
+      caption: "持续更新",
+      description: "支持GPT-5、Claude-4.5、Gemini-2.5-Pro等最新AI模型，持续更新，助力开发者保持技术领先。",
     },
     {
-      title: "Deployment playbooks",
-      caption: "Production ready",
-      description: "Operational guides show how we carry ideas from whiteboard concepts to launched features.",
+      title: "模型微调",
+      caption: "定制化服务",
+      description: "支持模型微调，接入个人/企业/行业知识库，提高在特定领域的专业性。",
     },
   ];
 
@@ -39,7 +39,7 @@ export function ResearchShowcase() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 text-sm font-medium text-primary"
             >
-              Research in motion
+              面向开发者
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export function ResearchShowcase() {
               transition={{ delay: 0.1, duration: 0.6 }}
               className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight"
             >
-              Bridging theory and product experiences
+              提供一站式的API接入解决方案
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -57,8 +57,7 @@ export function ResearchShowcase() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-base sm:text-lg text-muted-foreground leading-relaxed"
             >
-              Our research programs explore new capabilities and alignment techniques, and we bring those advances 
-              into production with careful evaluation. Preview the latest interactive concepts in real time.
+              围绕多元化的AI使用需求，提供从文本到图像、视频、视觉理解、语音、多模态协同等一站式解决方案
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -69,20 +68,20 @@ export function ResearchShowcase() {
             >
               {[
                 {
-                  title: "Generative experiences",
-                  description: "Transform prompts into dynamic worlds, interfaces, and simulations."
+                  title: "文本生成",
+                  description: "支持GPT-5、Claude-4.5、Gemini-2.5-Pro等最新AI模型，更强大的语义理解和思考能力，更长的上下文长度，更精准的回答质量。"
                 },
                 {
-                  title: "Adaptive reasoning",
-                  description: "Models that learn from feedback loops and adapt in-context."
+                  title: "多模态能力",
+                  description: "支持图像、视频理解，快速完成文件分析，图像生成与编辑"
                 },
                 {
-                  title: "Multimodal interfaces",
-                  description: "Understand text, imagery, and motion in a single unified system."
+                  title: "定向功能模型",
+                  description: "提供Midjourney、Sora、Nano-banana等图像/视频生成模型API接口，一键接入，快速生成高质量图片/视频。"
                 },
                 {
-                  title: "Evaluation pipelines",
-                  description: "Continuous monitoring and alignment scoring for safe deployment."
+                  title: "Claude Code",
+                  description: "一键接入Claude Code，无需科学上网，稳定低延迟。节省70%以上的开发成本。"
                 }
               ].map((item) => (
                 <div key={item.title} className="space-y-2">

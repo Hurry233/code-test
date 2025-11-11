@@ -5,23 +5,23 @@ import { Shield, Scale, Users, AlertTriangle } from "lucide-react";
 
 const policies = [
   {
-    title: "Proactive safety",
-    description: "Every release goes through adversarial testing, bias evaluation, and real-world performance monitoring.",
+    title: "隐私安全保障",
+    description: "具备隐私隔离机制，确保用户数据安全，包含数据脱敏、数据加密等安全措施。",
     icon: Shield,
   },
   {
-    title: "Human oversight",
-    description: "Dedicated policy teams collaborate with researchers, ethicists, and impacted communities.",
+    title: "用户价值导向",
+    description: "坚持用户价值导向，以技术服务为核心，不断优化产品体验，为用户提供最好的AI对话体验。",
     icon: Users,
   },
   {
-    title: "Transparent governance",
-    description: "Comprehensive documentation, system cards, and alignment evaluations published for every major update.",
+    title: "透明治理",
+    description: "所有重大更新均发布详细的文档、系统卡片和对齐评估，确保透明治理。",
     icon: Scale,
   },
   {
-    title: "Responsible deployment",
-    description: "Tiered API access, rate limits, and safety filters designed to prevent misuse at scale.",
+    title: "安全合规",
+    description: "平台所有AI服务均为学习交流使用，需遵守当地相关法律法规，严禁用于非法用途。",
     icon: AlertTriangle,
   },
 ];
@@ -40,7 +40,7 @@ export function SafetySection() {
               transition={{ duration: 0.4 }}
               className="text-sm font-medium text-primary"
             >
-              Safety & Alignment
+              隐私安全
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 16 }}
@@ -49,7 +49,7 @@ export function SafetySection() {
               transition={{ delay: 0.1, duration: 0.6 }}
               className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight"
             >
-              Building AI that&apos;s beneficial by design
+              打造安全可靠的AI服务
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -58,8 +58,7 @@ export function SafetySection() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-base sm:text-lg text-muted-foreground leading-relaxed"
             >
-              Safety is integrated across our research, product, and policy work. We iterate with feedback from 
-              global communities, regulators, and independent partners to ensure our systems remain trustworthy.
+              我们高度重视用户隐私安全，采用先进的隐私隔离机制，确保用户数据安全，包含数据脱敏、数据加密等安全措施。
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 16 }}

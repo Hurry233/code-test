@@ -31,7 +31,7 @@ export function CTASection() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight"
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60">
-                Ready to get started?
+                准备好开启AI之旅了吗？
               </span>
             </motion.h2>
             <motion.p
@@ -41,8 +41,8 @@ export function CTASection() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
             >
-              Join millions of people using AI to augment their capabilities. 
-              Start building, creating, and exploring today.
+              加入我们的平台，畅享GPT-5、Claude-4.5、Gemini-2.5-Pro等国际主流AI模型，
+              无论是个人创作还是企业应用，我们都能提供最适合的解决方案。
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -52,11 +52,11 @@ export function CTASection() {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <Button size="lg" className="group">
-                Start for free
+                立即注册
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" className="bg-background/80 backdrop-blur-sm">
-                Contact sales
+                咨询客服
               </Button>
             </motion.div>
           </div>

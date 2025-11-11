@@ -27,7 +27,7 @@ interface Logos3Props {
 }
 
 const Logos3 = ({
-  heading = "Trusted by these companies",
+  heading = "受到领先科技公司与创新团队的信任",
   logos = [
     {
       id: "logo-1",

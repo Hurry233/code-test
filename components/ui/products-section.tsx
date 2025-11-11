@@ -6,34 +6,35 @@ import { Button } from "@/components/ui/button";
 
 const products = [
   {
-    title: "ChatGPT",
-    description: "An AI assistant that can engage in natural conversation, answer questions, and help with a wide variety of tasks.",
+    title: "AI聚合站",
+    description: "对话、绘画、视频、PPT 一站式创作工作台，聚合 10+ 国际主流模型，多模态协同高效产出。",
     icon: MessageSquare,
     color: "from-emerald-500 to-teal-600",
-    href: "#",
-    badge: "Most Popular"
+    href: "/products/mirror",
+    badge: "会员热选"
   },
   {
-    title: "GPT-4",
-    description: "Our most capable model for complex reasoning, creative writing, and detailed instruction following.",
+    title: "统一API网关",
+    description: "一行代码接入所有主流模型API，支持Claude Code、GPT-4 Turbo等，按量计费，灵活扩展。",
     icon: Code,
     color: "from-violet-500 to-purple-600",
-    href: "#",
-    badge: "Latest"
+    href: "/products/api-gateway",
+    badge: "开发者首选"
   },
   {
-    title: "DALL·E 3",
-    description: "Create unique images from text descriptions with unprecedented realism and accuracy.",
+    title: "ChatGPT官方代充",
+    description: "安全快捷的ChatGPT Plus/Team官方订阅代充服务，支持企业批量购买，提供发票。",
     icon: Image,
     color: "from-pink-500 to-rose-600",
-    href: "#",
+    href: "/products/recharge",
   },
   {
-    title: "Whisper",
-    description: "Advanced speech recognition system for transcription and translation in multiple languages.",
+    title: "ChatGPT镜像系统",
+    description: "国内直连ChatGPT官网镜像，无需魔法上网，享受官网的AI对话体验，具备完整的隐私隔离机制。",
     icon: Mic,
     color: "from-blue-500 to-cyan-600",
-    href: "#",
+    href: "/products/mirror-system",
+    badge: "预售中"
   },
 ];
 
@@ -51,7 +52,7 @@ export function ProductsSection() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4"
           >
-            Our Products
+            覆盖全场景的AI应用服务
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -60,7 +61,7 @@ export function ProductsSection() {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="text-base sm:text-lg text-muted-foreground"
           >
-            Powerful AI tools designed for everyone, from developers to creators
+            围绕多元化的AI使用需求，提供一站式解决方案
           </motion.p>
         </div>
 
@@ -113,7 +114,7 @@ export function ProductsSection() {
                         variant="ghost" 
                         className="group/btn p-0 h-auto font-medium hover:bg-transparent"
                       >
-                        Learn more
+                        了解详情
                         <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
                       </Button>
                     </div>
@@ -125,18 +126,7 @@ export function ProductsSection() {
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <Button size="lg" className="group">
-            View all products
-            <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Button>
-        </motion.div>
+        
       </div>
     </section>
   );

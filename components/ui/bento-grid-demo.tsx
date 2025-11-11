@@ -11,8 +11,8 @@ import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 const features = [
   {
     Icon: FileTextIcon,
-    name: "Save your files",
-    description: "We automatically save your files as you type.",
+    name: "文件分析",
+    description: "支持上传文件，快速完成文献理解、总结翻译、数据读取等任务，提取关键信息，完成分析和整理。",
     href: "/",
     cta: "Learn more",
     background: (
@@ -25,8 +25,8 @@ const features = [
   },
   {
     Icon: InputIcon,
-    name: "Full text search",
-    description: "Search through all your files in one place.",
+    name: "自然语言对话",
+    description: "GPT-5、Claude-4.5、Gemini-2.5-Pro等最新AI模型，更强大的语义理解和思考能力，更长的上下文长度，更精准的回答质量。",
     href: "/",
     cta: "Learn more",
     background: (
@@ -39,8 +39,8 @@ const features = [
   },
   {
     Icon: GlobeIcon,
-    name: "Multilingual",
-    description: "Supports 100+ languages and counting.",
+    name: "联网搜索",
+    description: "支持联网搜索，在线搜索最新资讯，融入上下文信息，提供更精准的回答。",
     href: "/",
     cta: "Learn more",
     background: (
@@ -53,8 +53,8 @@ const features = [
   },
   {
     Icon: CalendarIcon,
-    name: "Calendar",
-    description: "Use the calendar to filter your files by date.",
+    name: "绘画与视频",
+    description: "支持Midjourney、Sora、Nano-banana等图像/视频生成模型，快速生成高质量图片/视频。",
     href: "/",
     cta: "Learn more",
     background: (
@@ -66,9 +66,9 @@ const features = [
   },
   {
     Icon: BellIcon,
-    name: "Notifications",
+    name: "Claude Code",
     description:
-      "Get notified when someone shares a file or mentions you in a comment.",
+      "一键接入Claude Code，让大模型直接与本地文件进行交互，读取、修改、创建文件，用自然语言驱动生产力。",
     href: "/",
     cta: "Learn more",
     background: (
