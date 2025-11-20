@@ -1,6 +1,6 @@
 "use client"
 
-import { Sparkles, Code, CreditCard, Globe, Workflow, Database, Settings2, Menu } from "lucide-react";
+import { Sparkles, Code, CreditCard, Globe, Workflow, Database, Settings2, Menu, Shield, AlertCircle } from "lucide-react";
 import Link from "next/link";
 
 import {
@@ -114,8 +114,46 @@ const Navbar = ({
       ],
     },
     {
-      title: "关于我们",
-      url: "/about",
+      title: "使用教程",
+      url: "#",
+      items: [
+        {
+          title: "快速开始",
+          description: "快速了解并使用AI服务",
+          icon: <Sparkles className="size-5 shrink-0" />,
+          url: "/tutorials/quick-start",
+        },
+        {
+          title: "API对接指南",
+          description: "开发者API集成文档",
+          icon: <Code className="size-5 shrink-0" />,
+          url: "/tutorials/api-integration",
+        },
+        {
+          title: "产品使用指南",
+          description: "深入了解产品功能",
+          icon: <Globe className="size-5 shrink-0" />,
+          url: "/tutorials/product-usage",
+        },
+        {
+          title: "安全最佳实践",
+          description: "保护数据与API安全",
+          icon: <Shield className="size-5 shrink-0" />,
+          url: "/tutorials/security-best-practices",
+        },
+        {
+          title: "故障排查指南",
+          description: "快速定位常见问题",
+          icon: <AlertCircle className="size-5 shrink-0" />,
+          url: "/tutorials/troubleshooting",
+        },
+        {
+          title: "高级配置",
+          description: "面向架构师的配置指南",
+          icon: <Settings2 className="size-5 shrink-0" />,
+          url: "/tutorials/advanced-config",
+        },
+      ],
     },
     {
       title: "定价方案",

@@ -37,7 +37,17 @@ const navItems: NavItem[] = [
       { name: "模型微调", href: "/services/fine-tuning", description: "定制化模型训练" },
     ],
   },
-  { name: "关于我们", href: "/about" },
+  {
+    name: "使用教程",
+    subItems: [
+      { name: "快速开始", href: "/tutorials/quick-start", description: "快速了解并使用AI服务" },
+      { name: "API对接指南", href: "/tutorials/api-integration", description: "开发者API集成文档" },
+      { name: "产品使用指南", href: "/tutorials/product-usage", description: "深入了解产品功能" },
+      { name: "安全最佳实践", href: "/tutorials/security-best-practices", description: "保护数据与API安全" },
+      { name: "故障排查指南", href: "/tutorials/troubleshooting", description: "快速定位常见问题" },
+      { name: "高级配置", href: "/tutorials/advanced-config", description: "面向架构师的配置指南" },
+    ],
+  },
   { name: "定价方案", href: "/#pricing" },
   { name: "联系我们", href: "/contact" },
 ];
