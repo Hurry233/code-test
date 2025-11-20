@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { SplineScene } from "@/components/ui/splite";
-import { WordRotate } from "@/components/ui/word-rotate";
+import { ArrowRight, Sparkles, Zap } from "lucide-react";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -42,21 +41,17 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight space-y-2"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/60">
+              <div className="bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/60">
                 连接世界
-              </span>
-              <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground/80 to-muted-foreground">
+              </div>
+              <div className="bg-clip-text text-transparent bg-gradient-to-r from-foreground/80 to-muted-foreground">
                 顶尖AI模型
-              </span>
-              <br />
-              <WordRotate
-                words={["GPT-5", "Claude-4.5", "Gemini-2.5-Pro", "Midjourney", "Sora", "Nano-Banana", "Suno", "Gork"]}
-                className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-primary/60"
-                duration={3000}
-              />
+              </div>
+              <div className="text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-primary/60">
+                GPT • Claude • Gemini • More
+              </div>
             </motion.div>
 
             {/* Subtitle */}
@@ -77,12 +72,16 @@ export function HeroSection() {
               transition={{ delay: 0.7, duration: 0.8 }}
               className="flex flex-col sm:flex-row items-start gap-4 pt-4"
             >
-              <Button size="lg" className="group">
-                立即开始
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <Button size="lg" className="group" asChild>
+                <Link href="#pricing">
+                  立即开始
+                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-background/50 backdrop-blur-sm">
-                查看定价
+              <Button size="lg" variant="outline" className="bg-background/50 backdrop-blur-sm" asChild>
+                <Link href="/tutorials">
+                  查看教程
+                </Link>
               </Button>
             </motion.div>
 
@@ -110,19 +109,20 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right 3D area */}
+          {/* Right visual area */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             className="relative h-[500px] lg:h-[600px] w-full"
           >
-            <div className="relative w-full h-full rounded-3xl border border-border/60 bg-black/80 p-4 shadow-[0px_0px_70px_-20px_rgba(80,80,120,0.35)]">
-              <div className="relative h-full w-full overflow-hidden rounded-2xl border border-border/70">
-                <SplineScene 
-                  scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                  className="h-full w-full"
-                />
+            <div className="relative w-full h-full rounded-3xl border border-border/60 bg-gradient-to-br from-primary/10 via-background to-primary/5 p-4 shadow-[0px_0px_70px_-20px_rgba(80,80,120,0.35)] flex items-center justify-center">
+              <div className="relative h-full w-full overflow-hidden rounded-2xl border border-border/70 flex items-center justify-center">
+                <div className="text-center space-y-4">
+                  <Zap className="w-20 h-20 mx-auto text-primary/50" />
+                  <p className="text-xl font-semibold text-foreground">AI 大模型聚合平台</p>
+                  <p className="text-sm text-muted-foreground max-w-xs">一站式使用全球顶尖AI能力</p>
+                </div>
               </div>
             </div>
           </motion.div>

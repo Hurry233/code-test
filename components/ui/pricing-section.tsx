@@ -1,177 +1,121 @@
 "use client"
 
 import * as React from "react"
+import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Check } from "lucide-react"
 
-import { Pricing, type PricingPlan } from "@/components/ui/pricing-cards"
-import { Tab } from "@/components/ui/pricing-tab"
+type PricingPlan = {
+  name: string
+  description: string
+  price: number
+  period: string
+  features: string[]
+  highlighted?: boolean
+}
 
 type ModeKey = "会员订阅" | "API计费"
 
 const MEMBER_PLANS: PricingPlan[] = [
   {
-    name: "月度会员",
-    description: "面向个人创作者与小团队，一价畅享GPT、Claude、Gemini、Midjourney等主流模型镜像。",
-    price: "¥199",
-    priceSuffix: "/ 月",
+    name: "基础版",
+    description: "个人开发者",
+    price: 29,
+    period: "月",
     features: [
-      {
-        title: "无限畅享主流模型",
-        description: "会员期内不限次数调用GPT-4、Claude 3.5、Gemini Advanced等镜像服务。",
-      },
-      {
-        title: "Midjourney绘图",
-        description: "包含Midjourney图像生成额度，快速创作高质量视觉内容。",
-      },
-      {
-        title: "全球节点加速",
-        description: "超低延迟接入海外官方服务，7x24小时运维保障。",
-      },
+      "每月 50,000 tokens",
+      "支持 GPT-4, Claude, Gemini",
+      "标准支持",
+      "社区访问",
     ],
-    action: {
-      label: "立即开通",
-      icon: "move-right",
-    },
   },
   {
-    name: "季度会员",
-    description: "适合长期使用的专业团队，享受更多优惠价格与优先支持。",
-    price: "¥549",
-    priceSuffix: "/ 季",
+    name: "专业版",
+    description: "企业和团队",
+    price: 99,
+    period: "月",
     features: [
-      {
-        title: "全量模型合集",
-        description: "同步更新OpenAI、Anthropic、Google最新模型与升级。",
-      },
-      {
-        title: "专属客服与工单",
-        description: "企业级响应机制，重大需求优先处理。",
-      },
-      {
-        title: "团队协作",
-        description: "支持多人账号共享调用统计与使用管理。",
-      },
+      "每月 500,000 tokens",
+      "所有模型无限制",
+      "优先支持",
+      "API 访问",
+      "团队协作",
+      "高级分析",
     ],
-    action: {
-      label: "首选方案",
-      icon: "move-right",
-    },
-    highlight: true,
+    highlighted: true,
   },
   {
-    name: "年度会员",
-    description: "为企业及机构提供整年服务，包含白名单定制与高级运维。",
-    price: "¥1,999",
-    priceSuffix: "/ 年",
+    name: "企业版",
+    description: "大规模应用",
+    price: 299,
+    period: "月",
     features: [
-      {
-        title: "白名单优先开通",
-        description: "提前体验最新模型与功能，专人协助迁移。",
-      },
-      {
-        title: "专属知识库",
-        description: "赠送企业知识库搭建与创作工作流诊断。",
-      },
-      {
-        title: "定制合同与发票",
-        description: "支持企业采购流程与多种付款方式。",
-      },
+      "无限 tokens",
+      "所有模型优先访问",
+      "24/7 专属支持",
+      "定制集成",
+      "SLA 保证",
+      "专业咨询",
+      "私有部署选项",
     ],
-    action: {
-      label: "预约顾问",
-      icon: "phone-call",
-      variant: "outline",
-    },
   },
 ]
 
 const API_PLANS: PricingPlan[] = [
   {
-    name: "¥1,000 API额度",
-    description: "适合验证期项目，零门槛接入统一大模型网关。",
-    price: "¥1,000",
-    priceSuffix: "充值包",
+    name: "按需计费",
+    description: "为您计费",
+    price: 0.002,
+    period: "1K tokens",
     features: [
-      {
-        title: "一键接入Claude Code",
-        description: "提供SDK与示例，极速完成代码助手集成。",
-      },
-      {
-        title: "按量计费",
-        description: "按实际调用扣费，额度可用于所有模型路线。",
-      },
-      {
-        title: "监控面板",
-        description: "实时查看QPS、延迟、消耗与错误率。",
-      },
+      "按实际使用计费",
+      "无最小消费",
+      "所有模型支持",
+      "实时计费",
+      "详细账单",
     ],
-    action: {
-      label: "立即充值",
-      icon: "move-right",
-    },
   },
   {
-    name: "¥5,000 API额度",
-    description: "团队研发首选，支持自定义限流与合作伙伴管理。",
-    price: "¥5,000",
-    priceSuffix: "充值包",
+    name: "预付套餐",
+    description: "节省 20%",
+    price: 9.99,
+    period: "100K tokens",
     features: [
-      {
-        title: "50%额度赠送",
-        description: "赠送额外¥2,500额度，降低大模型使用成本。",
-      },
-      {
-        title: "多环境隔离",
-        description: "支持开发/测试/生产多环境密钥管理。",
-      },
-      {
-        title: "专属技术顾问",
-        description: "接口调优、限流策略、容灾方案一站式支持。",
-      },
+      "预付费套餐",
+      "价格更优惠",
+      "所有模型支持",
+      "一年有效期",
+      "可叠加购买",
     ],
-    action: {
-      label: "团队套餐",
-      icon: "move-right",
-    },
-    highlight: true,
+    highlighted: true,
   },
   {
-    name: "企业定制额度",
-    description: "面向大规模调用场景，提供专线加速与SLA保障。",
-    price: "¥20,000+",
-    priceSuffix: "按需定制",
+    name: "企业套餐",
+    description: "定制化方案",
+    price: 0.0015,
+    period: "1K tokens",
     features: [
-      {
-        title: "专用网关与IP白名单",
-        description: "确保与企业内网/云资源安全互通。",
-      },
-      {
-        title: "数据合规支持",
-        description: "满足金融、教育、政府等行业合规要求。",
-      },
-      {
-        title: "联合研发",
-        description: "模型微调、知识库构建、工作流落地全流程陪跑。",
-      },
+      "定制价格",
+      "大额折扣",
+      "独立账户管理",
+      "技术支持",
+      "定制集成",
     ],
-    action: {
-      label: "联系商务",
-      icon: "phone-call",
-      variant: "outline",
-    },
   },
 ]
 
 const MODES: Record<ModeKey, { badge: string; title: string; description: string; plans: PricingPlan[] }> = {
   "会员订阅": {
     badge: "会员订阅",
-    title: "镜像服务不限次数，全面解锁国际大模型",
-    description: "会员期内畅享GPT、Claude、Gemini、Midjourney等顶尖模型镜像，提供企业级运维保障。",
+    title: "按需订阅，按月付费",
+    description: "选择合适的计划，享受稳定的 AI 服务。按月订阅，随时升级或降级。",
     plans: MEMBER_PLANS,
   },
   "API计费": {
     badge: "API计费",
     title: "统一网关，按量付费",
-    description: "按需购买额度，一键接入主流模型API，适用于应用开发、自动化工作流、企业系统集成。",
+    description: "按需购买额度，一键接入主流模型 API，适用于应用开发、自动化工作流、企业系统集成。",
     plans: API_PLANS,
   },
 }
@@ -183,26 +127,123 @@ export function PricingSection() {
   return (
     <section id="pricing" className="relative overflow-hidden py-24 sm:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/10" />
-      <div className="relative">
-        <Pricing
-          badge={badge}
-          title={title}
-          description={description}
-          plans={plans}
-          switcher={
-            <div className="flex w-fit rounded-full bg-muted p-1">
-              {(Object.keys(MODES) as ModeKey[]).map((mode) => (
-                <Tab
-                  key={mode}
-                  text={mode}
-                  selected={selectedMode === mode}
-                  setSelected={() => setSelectedMode(mode)}
-                  discount={mode === "会员订阅"}
-                />
-              ))}
-            </div>
-          }
-        />
+      <div className="container relative mx-auto px-4">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-3xl text-center mb-12"
+        >
+          <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+            {badge}
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+            {title}
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            {description}
+          </p>
+        </motion.div>
+
+        {/* Mode Switcher */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="flex justify-center mb-12"
+        >
+          <div className="flex w-fit rounded-full bg-muted p-1 gap-1">
+            {(Object.keys(MODES) as ModeKey[]).map((mode) => (
+              <button
+                key={mode}
+                onClick={() => setSelectedMode(mode)}
+                className={`px-4 py-2 rounded-full font-semibold transition-all ${
+                  selectedMode === mode
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {mode}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Pricing Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="mx-auto max-w-6xl grid md:grid-cols-3 gap-6"
+        >
+          {plans.map((plan, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+            >
+              <Card className={`h-full p-8 flex flex-col border-border/60 ${
+                plan.highlighted
+                  ? "border-primary/50 bg-gradient-to-b from-primary/10 to-background"
+                  : "bg-card/60"
+              }`}>
+                {plan.highlighted && (
+                  <div className="mb-4 inline-flex w-fit px-3 py-1 rounded-full bg-primary/20 text-sm font-semibold text-primary">
+                    推荐
+                  </div>
+                )}
+                <h3 className="text-2xl font-bold text-foreground">{plan.name}</h3>
+                <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
+                
+                <div className="my-6">
+                  <div className="text-4xl font-bold text-foreground">
+                    ¥{plan.price}
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-2">/{plan.period}</p>
+                </div>
+
+                <Button
+                  className={`w-full mb-6 ${
+                    plan.highlighted
+                      ? ""
+                      : "bg-muted text-foreground hover:bg-muted/80"
+                  }`}
+                  variant={plan.highlighted ? "default" : "outline"}
+                >
+                  立即购买
+                </Button>
+
+                <div className="space-y-3">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-muted-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Footer note */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-sm text-muted-foreground">
+            所有计划均包含免费试用。无需信用卡。
+          </p>
+        </motion.div>
       </div>
     </section>
   )
