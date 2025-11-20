@@ -1,32 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { WorldMap } from "@/components/ui/map";
-
-const dots = [
-  {
-    start: { lat: 37.7749, lng: -122.4194, label: "San Francisco" },
-    end: { lat: 51.5074, lng: -0.1278, label: "London" },
-  },
-  {
-    start: { lat: 40.7128, lng: -74.006, label: "New York" },
-    end: { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
-  },
-  {
-    start: { lat: 52.52, lng: 13.405, label: "Berlin" },
-    end: { lat: -33.8688, lng: 151.2093, label: "Sydney" },
-  },
-  {
-    start: { lat: 28.6139, lng: 77.209, label: "Delhi" },
-    end: { lat: -34.6037, lng: -58.3816, label: "Buenos Aires" },
-  },
-  {
-    start: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
-    end: { lat: 48.2082, lng: 16.3738, label: "Vienna" },
-  },
-];
+import { Globe, Zap, Users, TrendingUp } from "lucide-react";
 
 export function GlobalImpactSection() {
+  const stats = [
+    {
+      icon: Users,
+      value: "11k+",
+      label: "平台活跃用户",
+    },
+    {
+      icon: TrendingUp,
+      value: "99.8%",
+      label: "全年服务可用性",
+    },
+    {
+      icon: Zap,
+      value: "20+",
+      label: "平台每年大版本更新次数",
+    },
+    {
+      icon: Globe,
+      value: "98.5%",
+      label: "用户满意度",
+    },
+  ];
+
   return (
     <section className="relative py-24 sm:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-muted/20 via-background to-background" />
@@ -67,33 +67,22 @@ export function GlobalImpactSection() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="grid grid-cols-2 gap-6"
             >
-              {[
-                {
-                  value: "11k+",
-                  label: "平台活跃用户",
-                },
-                {
-                  value: "99.8%",
-                  label: "全年服务可用性",
-                },
-                {
-                  value: "20+",
-                  label: "平台每年大版本更新次数",
-                },
-                {
-                  value: "98.5%",
-                  label: "用户满意度",
-                },
-              ].map((stat) => (
-                <div key={stat.value} className="space-y-2">
-                  <p className="text-3xl font-semibold text-foreground">
-                    {stat.value}
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <div key={index} className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Icon className="w-5 h-5 text-primary" />
+                      <p className="text-3xl font-semibold text-foreground">
+                        {stat.value}
+                      </p>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {stat.label}
+                    </p>
+                  </div>
+                );
+              })}
             </motion.div>
           </div>
 
@@ -105,8 +94,11 @@ export function GlobalImpactSection() {
             className="relative"
           >
             <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card/60 p-6 backdrop-blur">
-              <div className="rounded-2xl border border-border/60 bg-black/90 p-4">
-                <WorldMap dots={dots} lineColor="#3b82f6" />
+              <div className="rounded-2xl border border-border/60 bg-muted/20 p-8 flex items-center justify-center h-64">
+                <div className="text-center space-y-4">
+                  <Globe className="w-16 h-16 mx-auto text-primary/50" />
+                  <p className="text-muted-foreground">全球节点分布图</p>
+                </div>
               </div>
             </div>
           </motion.div>
