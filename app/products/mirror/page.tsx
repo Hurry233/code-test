@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { Navbar } from "@/components/ui/navbar";
-import { SiteFooter } from "@/components/ui/site-footer";
+import { Navbar } from "@/components/layout/navbar";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";

@@ -1,17 +1,17 @@
-import { Navbar } from "@/components/ui/navbar";
-import { SiteFooter } from "@/components/ui/site-footer";
-import { HeroSection } from "@/components/ui/hero-section";
+import { Navbar } from "@/components/layout/navbar";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { HeroSection } from "@/components/sections/hero-section";
 import { Logos3 } from "@/components/ui/logos3";
 
-import { ProductsSection } from "@/components/ui/products-section";
-import { FeaturesBentoSection } from "@/components/ui/features-bento-section";
-import { ResearchShowcase } from "@/components/ui/research-showcase";
-import { SafetySection } from "@/components/ui/safety-section";
-import { GlobalImpactSection } from "@/components/ui/global-impact-section";
-import { PricingSection } from "@/components/ui/pricing-section";
-import { CTASection } from "@/components/ui/cta-section";
+import { ProductsSection } from "@/components/sections/products-section";
+import { FeaturesBentoSection } from "@/components/sections/features-bento-section";
+import { ResearchShowcase } from "@/components/sections/research-showcase";
+import { SafetySection } from "@/components/sections/safety-section";
+import { GlobalImpactSection } from "@/components/sections/global-impact-section";
+import { PricingSection } from "@/components/sections/pricing-section";
+import { CTASection } from "@/components/sections/cta-section";
 import DisplayCards from "@/components/ui/display-cards";
-import { TimelineDemo } from "@/components/ui/timeline-demo";
+import { TimelineDemo } from "@/components/demos/timeline-demo";
 import { Sparkles, ShieldCheck, Rocket, Github, Twitter, Linkedin } from "lucide-react";
 
 const displayCards = [

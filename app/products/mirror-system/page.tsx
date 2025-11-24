@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import { Navbar } from "@/components/ui/navbar";
-import { SiteFooter } from "@/components/ui/site-footer";
-import { CTASection } from "@/components/ui/cta-section";
+import { Navbar } from "@/components/layout/navbar";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { CTASection } from "@/components/sections/cta-section";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";

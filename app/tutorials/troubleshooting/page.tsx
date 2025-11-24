@@ -1,7 +1,7 @@
 "use client";
 
-import { Navbar } from "@/components/ui/navbar";
-import { SiteFooter } from "@/components/ui/site-footer";
+import { Navbar } from "@/components/layout/navbar";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { motion } from "framer-motion";
 import { AlertCircle, ArrowLeft, Server, Wifi, Lock, Clock } from "lucide-react";
 import { Card } from "@/components/ui/card";
