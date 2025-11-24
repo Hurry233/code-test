@@ -6,6 +6,7 @@ import { CTASection } from "@/components/sections/cta-section";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { Timeline } from "@/components/ui/timeline";
 import {
   Binary,
   Check,
@@ -139,6 +140,10 @@ const benefits = [
     title: "企业客户增值",
     items: ["团队协作空间", "统一账号管理", "发票与合同支持", "技术支持与培训"],
   },
+  {
+    title: "限时活动",
+    items: ["邀请好友双方各得 1 个月会员", "参与内测反馈赢取永久会员", "定期举办 Prompt 技巧分享会", "开发者 API 免费额度"],
+  },
 ];
 
 const faqs = [
@@ -164,18 +169,66 @@ const faqs = [
   },
 ];
 
-const timeline = [
+const timelineData = [
   {
-    label: "阶段一：内测阶段（当前）",
-    description: "开放预约通道，邀请核心用户体验与反馈。",
+    title: "内测阶段（当前）",
+    content: (
+      <div>
+        <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          开放预约通道，邀请核心用户体验与反馈。重点验证网络稳定性与高并发场景下的响应速度。
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+           <div className="bg-primary/5 rounded-lg p-4 border border-primary/10">
+             <div className="font-semibold text-primary mb-1">功能验证</div>
+             <div className="text-xs text-muted-foreground">核心对话、DALL-E 3、代码解释器</div>
+           </div>
+           <div className="bg-primary/5 rounded-lg p-4 border border-primary/10">
+             <div className="font-semibold text-primary mb-1">性能测试</div>
+             <div className="text-xs text-muted-foreground">延迟 &lt; 500ms，QPS 压力测试</div>
+           </div>
+        </div>
+      </div>
+    ),
   },
   {
-    label: "阶段二：小规模公测（预计 2 周后）",
-    description: "对预售用户开放公测权限，提供完整功能试用。",
+    title: "小规模公测",
+    content: (
+      <div>
+        <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          预计 2 周后启动。对预售用户开放公测权限，提供完整功能试用。上线插件商店镜像与语音功能。
+        </p>
+         <div className="grid grid-cols-2 gap-4">
+           <div className="bg-amber-500/5 rounded-lg p-4 border border-amber-500/10">
+             <div className="font-semibold text-amber-600 mb-1">权益释放</div>
+             <div className="text-xs text-muted-foreground">预售用户优先开通，赠送会员时长</div>
+           </div>
+           <div className="bg-amber-500/5 rounded-lg p-4 border border-amber-500/10">
+             <div className="font-semibold text-amber-600 mb-1">功能完善</div>
+             <div className="text-xs text-muted-foreground">移动端适配，团队协作功能上线</div>
+           </div>
+        </div>
+      </div>
+    ),
   },
   {
-    label: "阶段三：正式上线（预计 1 个月后）",
-    description: "全量开放，预售用户优先享受专属权益与技术支持。",
+    title: "正式上线",
+    content: (
+      <div>
+        <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          预计 1 个月后。全量开放注册，预售用户优先享受专属权益与技术支持。开启 API 网关对接。
+        </p>
+         <div className="grid grid-cols-2 gap-4">
+           <div className="bg-emerald-500/5 rounded-lg p-4 border border-emerald-500/10">
+             <div className="font-semibold text-emerald-600 mb-1">全面开放</div>
+             <div className="text-xs text-muted-foreground">所有用户可注册，支持企业私有化部署</div>
+           </div>
+           <div className="bg-emerald-500/5 rounded-lg p-4 border border-emerald-500/10">
+             <div className="font-semibold text-emerald-600 mb-1">生态扩展</div>
+             <div className="text-xs text-muted-foreground">API SDK 发布，第三方应用接入</div>
+           </div>
+        </div>
+      </div>
+    ),
   },
 ];
 
@@ -373,7 +426,7 @@ export default function MirrorSystemPage() {
               <Badge className="w-fit bg-primary/10 text-primary">预售福利</Badge>
               <h2 className="mt-4 text-3xl sm:text-4xl font-bold">早鸟专享权益抢先锁定</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {benefits.map((benefit) => (
                 <Card
                   key={benefit.title}
@@ -395,28 +448,8 @@ export default function MirrorSystemPage() {
         </section>
 
         {/* Timeline Section */}
-        <section className="py-16 sm:py-24 bg-muted/20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <Badge className="w-fit bg-primary/10 text-primary">上线计划</Badge>
-              <h2 className="mt-4 text-3xl sm:text-4xl font-bold">时间表与节奏安排</h2>
-            </div>
-            <div className="max-w-3xl mx-auto space-y-4">
-              {timeline.map((item, index) => (
-                <Card key={item.label} className="p-6 border-border/60 bg-background">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-1">{item.label}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
+        <section className="w-full">
+            <Timeline data={timelineData} />
         </section>
 
         {/* FAQ */}

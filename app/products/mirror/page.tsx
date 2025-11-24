@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { BentoGrid, BentoCard } from "@/components/ui/bento-grid";
 import {
   ArrowRight,
   Check,
@@ -15,6 +16,10 @@ import {
   PenTool,
   Sparkles,
   Zap,
+  Globe,
+  Code2,
+  Briefcase,
+  GraduationCap
 } from "lucide-react";
 
 const aggregatorAdvantages = [
@@ -33,57 +38,60 @@ const mirrorAdvantages = [
   "智能网关系统全力对抗降智问题",
 ];
 
-const aggregatorModules = [
+const features = [
   {
-    icon: MessageSquare,
-    title: "AI 对话",
-    description:
-      "聚合 GPT-5系列、Claude-4.5系列、Gemini-2.5-Pro系列、Gork系列等众多国际主流模型，一键无感切换，支持上下文连续对话，保障对话质量。",
-    bullets: [
-      "多个国际主流AI大模型最新版本",
-      "支持联网搜索、深度思考",
-      "支持文档读取、总结归纳",
-      "支持代码生成、支持实时渲染与在线预览HTML页面",
-    ],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80",
+    Icon: MessageSquare,
+    name: "AI 对话",
+    description: "聚合 GPT-5、Claude-4.5、Gemini-2.5-Pro 等顶尖模型，支持深度思考与联网搜索。",
+    href: "#",
+    cta: "开始对话",
+    className: "col-span-3 lg:col-span-1",
+    background: (
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/50 to-purple-100/50 dark:from-indigo-900/20 dark:to-purple-900/20 opacity-50" />
+    ),
   },
   {
-    icon: PenTool,
-    title: "AI 绘画",
-    description:
-      "集成 Midjourney、Nano-banana、Flux等图像生成模型，提供品牌视觉、海报、产品设计的定制化生成。",
-    bullets: [
-      "多种绘画风格，自定义Prompt",
-      "图片编辑、二次修改",
-      "超高清图片生成",
-      "支持商业使用",
-    ],
-    image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1600&q=80",
+    Icon: PenTool,
+    name: "AI 绘画",
+    description: "集成 Midjourney、Nano-banana、Flux，支持精准控图与超高清生成。",
+    href: "#",
+    cta: "开始创作",
+    className: "col-span-3 lg:col-span-2",
+    background: (
+      <Image
+        src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=800&q=80"
+        alt="AI Art"
+        fill
+        className="absolute inset-0 object-cover opacity-20 hover:opacity-30 transition-opacity"
+      />
+    ),
   },
   {
-    icon: Clapperboard,
-    title: "AI 视频",
-    description:
-      "Sora模型提供强大的视频生产力，简单的文字描述即可创作高质量的视频短片，支持多语言、多场景、多风格。",
-    bullets: [
-      "强大的自然语言理解能力",
-      "自带配音、背景音乐、字幕",
-      "更加真实的AI视频生成效果",
-      "支持商业使用"
-    ],
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80",
+    Icon: Clapperboard,
+    name: "AI 视频",
+    description: "Sora 引擎驱动，文字一键生成高清视频，支持运镜控制与物理模拟。",
+    href: "#",
+    cta: "生成视频",
+    className: "col-span-3 lg:col-span-2",
+    background: (
+      <Image
+        src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80"
+        alt="AI Video"
+        fill
+        className="absolute inset-0 object-cover opacity-20 hover:opacity-30 transition-opacity"
+      />
+    ),
   },
   {
-    icon: Layers,
-    title: "AI PPT（Beta）",
-    description:
-      "通过自然语言简单描述PPT内容或需求，即可自动生成PPT，支持多语言、多场景、多风格。",
-    bullets: [
-      "自动生成大纲",
-      "支持在线编辑、下载导出",
-      "更多功能持续迭代中",
-    ],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
+    Icon: Layers,
+    name: "AI PPT",
+    description: "一键生成精美 PPT 大纲与设计，支持实时编辑与导出，办公效率倍增。",
+    href: "#",
+    cta: "制作演示文稿",
+    className: "col-span-3 lg:col-span-1",
+    background: (
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-cyan-100/50 dark:from-blue-900/20 dark:to-cyan-900/20 opacity-50" />
+    ),
   },
 ];
 
@@ -111,6 +119,29 @@ const interfaceShots = [
     description: "支持GPT-5系列、Claude-4.5系列、Gemini-2.5-Pro系列、Gork系列等众多国际主流模型，持续跟进最新版本。",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
+  },
+];
+
+const useCases = [
+  {
+    icon: Code2,
+    title: "程序员/开发者",
+    description: "使用 Claude-4.5 分析复杂代码逻辑，利用 GPT-5 生成单元测试与技术文档。",
+  },
+  {
+    icon: Briefcase,
+    title: "产品与运营",
+    description: "利用 AI PPT 快速产出方案，使用 Midjourney 制作活动海报与营销素材。",
+  },
+  {
+    icon: GraduationCap,
+    title: "科研与学术",
+    description: "使用 Gemini-2.5-Pro 读取长篇论文，快速提炼核心观点与数据结论。",
+  },
+  {
+    icon: Globe,
+    title: "跨境电商",
+    description: "批量生成多语言商品文案，制作本地化营销视频，提升转化率。",
   },
 ];
 
@@ -180,8 +211,55 @@ export default function AIAggregationStationPage() {
           </div>
         </section>
 
-        {/* Comparison Section - Redesigned */}
+        {/* Modules Section with BentoGrid */}
+        <section className="py-16 sm:py-24">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl text-center mx-auto mb-12 space-y-4">
+              <Badge className="w-fit mx-auto bg-primary/10 text-primary">四大核心能力</Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold">一站式全能创作工作台</h2>
+              <p className="text-muted-foreground text-lg">
+                打破模型壁垒，将对话、绘图、视频、PPT 能力深度融合，让创意无限流动。
+              </p>
+            </div>
+            <BentoGrid>
+              {features.map((feature, idx) => (
+                <BentoCard key={idx} {...feature} />
+              ))}
+            </BentoGrid>
+          </div>
+        </section>
+
+        {/* Use Cases */}
         <section className="py-16 sm:py-24 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl text-center mx-auto mb-12 space-y-4">
+              <Badge className="w-fit mx-auto bg-primary/10 text-primary">应用场景</Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold">赋能千行百业</h2>
+              <p className="text-muted-foreground text-lg">
+                无论您是个人创作者还是企业团队，都能找到适合的 AI 提效路径。
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {useCases.map((useCase) => {
+                const Icon = useCase.icon;
+                return (
+                  <Card key={useCase.title} className="p-6 border-border/60 hover:shadow-lg transition-shadow">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2">{useCase.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {useCase.description}
+                    </p>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Section */}
+        <section className="py-16 sm:py-24">
           <div className="container mx-auto px-4">
             <div className="space-y-4 text-center max-w-3xl mx-auto mb-12">
               <Badge className="w-fit mx-auto bg-primary/10 text-primary">产品对比</Badge>
@@ -244,71 +322,6 @@ export default function AIAggregationStationPage() {
                   </div>
                 </div>
               </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Modules Section with Images */}
-        <section className="py-16 sm:py-24">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl text-center mx-auto mb-12 space-y-4">
-              <Badge className="w-fit mx-auto bg-primary/10 text-primary">四大核心能力模块</Badge>
-              <h2 className="text-3xl sm:text-4xl font-bold">合理利用不同模型的优势</h2>
-              <p className="text-muted-foreground text-lg">
-                将不同的模型优势融合在一起，提高AI使用效率，实现<span className="text-primary">“1+1&gt;2”</span>的效果
-              </p>
-            </div>
-            <div className="space-y-16">
-              {aggregatorModules.map((module, index) => {
-                const Icon = module.icon;
-                const isEven = index % 2 === 0;
-                return (
-                  <div
-                    key={module.title}
-                    className={`grid gap-8 lg:grid-cols-2 lg:items-center ${
-                      isEven ? "" : "lg:grid-flow-dense"
-                    }`}
-                  >
-                    {/* Image */}
-                    <div className={isEven ? "lg:order-1" : "lg:order-2"}>
-                      <Card className="overflow-hidden border-border/60 bg-background/90">
-                        <div className="relative aspect-[16/10]">
-                          <Image
-                            src={module.image}
-                            alt={module.title}
-                            fill
-                            className="object-cover"
-                            sizes="(min-width: 1024px) 50vw, 100vw"
-                          />
-                        </div>
-                      </Card>
-                    </div>
-
-                    {/* Content */}
-                    <div className={isEven ? "lg:order-2" : "lg:order-1"}>
-                      <Card className="border-border/60 bg-background/80 p-8">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                            <Icon className="w-6 h-6 text-primary" />
-                          </div>
-                          <h3 className="text-2xl font-semibold">{module.title}</h3>
-                        </div>
-                        <p className="text-base text-muted-foreground leading-relaxed mb-6">
-                          {module.description}
-                        </p>
-                        <ul className="space-y-3">
-                          {module.bullets.map((bullet) => (
-                            <li key={bullet} className="flex items-start gap-3">
-                              <Check className="mt-1 h-5 w-5 text-primary flex-shrink-0" />
-                              <span className="text-sm text-foreground">{bullet}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </Card>
-                    </div>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </section>

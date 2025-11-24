@@ -15,7 +15,9 @@ import {
   ShieldCheck,
   Star,
   Users,
+  Quote
 } from "lucide-react";
+import Image from "next/image";
 
 const heroBenefits = [
   "支持 ChatGPT Plus / Pro / Business 官方订阅代充",
@@ -37,7 +39,8 @@ const plans = [
       "联网搜索、插件商店、文件上传",
       "最多 30 天的聊天记录与会话同步",
     ],
-    cta: "了解 Plus 方案",
+    cta: "代充 Plus 方案",
+    popular: true,
   },
   {
     name: "ChatGPT Pro",
@@ -50,7 +53,8 @@ const plans = [
       "视频、语音、多文件处理能力升级",
       "提升上传大小、项目空间与自动化脚本运行时限",
     ],
-    cta: "了解 Pro 方案",
+    cta: "代充 Pro 方案",
+    popular: false,
   },
   {
     name: "ChatGPT Business",
@@ -63,7 +67,8 @@ const plans = [
       "成员权限、使用审计、对话留痕",
       "企业级隐私承诺与 SOC2 合规保障",
     ],
-    cta: "了解 Business 方案",
+    cta: "咨询 Business 方案",
+    popular: false,
   },
 ];
 
@@ -120,6 +125,24 @@ const recommendations = [
       "如果你需要更大的调用额度、多人协作、统一账单与企业级安全保障，首选 ChatGPT Business，性价比远高于单独开多份 Plus。",
     icon: Building2,
     action: "推荐方案：ChatGPT Business",
+  },
+];
+
+const testimonials = [
+  {
+    quote: "之前一直头疼如何给团队开通 ChatGPT，这里不仅解决了支付问题，还提供了正规发票，非常省心。",
+    author: "张先生",
+    title: "某互联网公司 CTO",
+  },
+  {
+    quote: "代充速度很快，基本上下单后十几分钟就搞定了，账号权益也是秒到账，推荐！",
+    author: "李女士",
+    title: "独立设计师",
+  },
+  {
+    quote: "Pro 版本的额度确实高，跑很多数据分析任务都不受限制，代充流程也很安全。",
+    author: "王博士",
+    title: "AI 研究员",
   },
 ];
 
@@ -202,8 +225,15 @@ export default function RechargePage() {
               {plans.map((plan) => (
                 <Card
                   key={plan.name}
-                  className="h-full border border-border/60 bg-background/80 p-8 space-y-6"
+                  className={`h-full border bg-background/80 p-8 space-y-6 relative transition-all hover:shadow-lg ${
+                    plan.popular ? "border-primary shadow-md scale-105 z-10" : "border-border/60"
+                  }`}
                 >
+                  {plan.popular && (
+                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full">
+                       最受欢迎
+                     </div>
+                  )}
                   <div className="space-y-2">
                     <Badge className="bg-primary/10 text-primary w-fit">{plan.tag}</Badge>
                     <h3 className="text-2xl font-semibold">{plan.name}</h3>
@@ -220,7 +250,7 @@ export default function RechargePage() {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="w-full">
+                  <Button variant={plan.popular ? "default" : "outline"} className="w-full">
                     {plan.cta}
                   </Button>
                 </Card>
@@ -304,7 +334,29 @@ export default function RechargePage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-24 bg-muted/20">
+         {/* Testimonials */}
+         <section className="py-16 sm:py-24 bg-muted/20">
+          <div className="container mx-auto px-4">
+             <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
+              <Badge className="w-fit mx-auto bg-primary/10 text-primary">客户评价</Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold">听听他们怎么说</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((t, i) => (
+                <Card key={i} className="p-8 border-border/60 bg-background">
+                  <Quote className="w-8 h-8 text-primary/20 mb-4" />
+                  <p className="text-muted-foreground italic mb-6">"{t.quote}"</p>
+                  <div>
+                    <p className="font-semibold text-foreground">{t.author}</p>
+                    <p className="text-xs text-muted-foreground">{t.title}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 sm:py-24">
           <div className="container mx-auto px-4">
             <Card className="border border-primary/20 bg-background/80 p-10 sm:p-14">
               <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
