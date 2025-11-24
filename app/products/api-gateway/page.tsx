@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { Navbar } from "@/components/ui/navbar";
-import { SiteFooter } from "@/components/ui/site-footer";
-import { CTASection } from "@/components/ui/cta-section";
+import { Navbar } from "@/components/layout/navbar";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { CTASection } from "@/components/sections/cta-section";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Check, Code2, Terminal, Zap, Shield, BarChart3, ArrowRight, Sparkles } from "lucide-react";
+import { Check, Code2, Terminal, Zap, Shield, BarChart3, ArrowRight, Sparkles, Laptop, Server, Globe } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Logos3 } from "@/components/ui/logos3";
 
 const features = [
   "一键接入 Claude Code、GPT-4 Turbo、Gemini 等 50+ 主流模型 API",
@@ -42,6 +44,12 @@ const claudeCodeHighlights = [
   "支持 GPT-4、Claude 3.5、Gemini 等多模型自由切换",
   "完整调用日志与 Token 消耗统计，成本透明可控",
   "与 Cursor、Continue 等 AI 编程工具无缝集成",
+];
+
+const integrationLogos = [
+  { id: "1", description: "VS Code", image: "https://www.shadcnblocks.com/images/block/logos/vercel.svg", className: "h-7 w-auto" }, // Placeholder
+  { id: "2", description: "Cursor", image: "https://www.shadcnblocks.com/images/block/logos/nextjs.svg", className: "h-7 w-auto" }, // Placeholder
+  { id: "3", description: "Python", image: "https://www.shadcnblocks.com/images/block/logos/react.png", className: "h-7 w-auto" }, // Placeholder
 ];
 
 export default function APIGatewayPage() {
@@ -88,9 +96,14 @@ export default function APIGatewayPage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="mt-8 rounded-2xl bg-muted/50 p-5 space-y-3">
-                    <p className="text-sm font-semibold">快速开始</p>
-                    <pre className="overflow-x-auto rounded-lg bg-background/60 p-3 text-xs">
+                  <div className="mt-8 rounded-2xl bg-muted/50 p-1">
+                    <Tabs defaultValue="python" className="w-full">
+                      <TabsList className="w-full justify-start rounded-t-xl bg-transparent p-0">
+                        <TabsTrigger value="python" className="rounded-tl-xl rounded-tr-xl data-[state=active]:bg-background/60">Python</TabsTrigger>
+                        <TabsTrigger value="curl" className="rounded-tl-xl rounded-tr-xl data-[state=active]:bg-background/60">cURL</TabsTrigger>
+                      </TabsList>
+                      <TabsContent value="python" className="mt-0">
+                         <pre className="overflow-x-auto rounded-b-xl bg-background/60 p-4 text-xs font-mono text-foreground">
 {`import openai
 
 client = openai.OpenAI(
@@ -102,10 +115,59 @@ response = client.chat.completions.create(
   model="gpt-4",
   messages=[{"role": "user", "content": "Hello"}]
 )`}
-                    </pre>
+                        </pre>
+                      </TabsContent>
+                      <TabsContent value="curl" className="mt-0">
+                         <pre className="overflow-x-auto rounded-b-xl bg-background/60 p-4 text-xs font-mono text-foreground">
+{`curl https://api.yourgateway.com/v1/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -d '{
+    "model": "gpt-4",
+    "messages": [{"role": "user", "content": "Hello"}]
+  }'`}
+                        </pre>
+                      </TabsContent>
+                    </Tabs>
                   </div>
                 </Card>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Developer Experience */}
+        <section className="py-16 sm:py-24 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+               <Badge className="w-fit mx-auto bg-primary/10 text-primary">开发者体验</Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold mt-4">为开发者而生</h2>
+              <p className="text-lg text-muted-foreground mt-2">
+                我们深知开发者的需求，提供全方位的工具与支持
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="p-6 border-border/60 bg-background hover:shadow-lg transition-all">
+                <Terminal className="w-10 h-10 text-emerald-500 mb-4" />
+                <h3 className="text-xl font-bold mb-2">SDK 支持</h3>
+                <p className="text-muted-foreground text-sm">
+                  全面兼容 OpenAI 官方 SDK (Python / Node.js)，无需修改业务逻辑，仅需替换 Base URL 即可无缝迁移。
+                </p>
+              </Card>
+              <Card className="p-6 border-border/60 bg-background hover:shadow-lg transition-all">
+                <Globe className="w-10 h-10 text-blue-500 mb-4" />
+                <h3 className="text-xl font-bold mb-2">多语言文档</h3>
+                <p className="text-muted-foreground text-sm">
+                  提供详尽的 API 文档、错误码说明与最佳实践指南，涵盖 Python, Go, Java 等主流语言示例。
+                </p>
+              </Card>
+               <Card className="p-6 border-border/60 bg-background hover:shadow-lg transition-all">
+                <Server className="w-10 h-10 text-purple-500 mb-4" />
+                <h3 className="text-xl font-bold mb-2">沙盒环境</h3>
+                <p className="text-muted-foreground text-sm">
+                  提供免费的沙盒测试环境，您可以在不消耗实际余额的情况下调试接口与集成流程。
+                </p>
+              </Card>
             </div>
           </div>
         </section>
@@ -226,6 +288,8 @@ response = client.chat.completions.create(
             </div>
           </div>
         </section>
+
+        <Logos3 heading="无缝集成主流开发工具" logos={integrationLogos} />
 
         {/* Pricing Section */}
         <section id="pricing" className="py-16 sm:py-24">

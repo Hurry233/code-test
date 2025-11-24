@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BentoDemo } from "@/components/ui/bento-grid-demo";
+import { BentoDemo } from "@/components/demos/bento-grid-demo";
 
 export function FeaturesBentoSection() {
   return (

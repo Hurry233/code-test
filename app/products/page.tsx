@@ -1,10 +1,10 @@
 "use client";
 
-import { Navbar } from "@/components/ui/navbar";
-import { SiteFooter } from "@/components/ui/site-footer";
-import { ProductsSection } from "@/components/ui/products-section";
-import { FeaturesBentoSection } from "@/components/ui/features-bento-section";
-import { PricingSection } from "@/components/ui/pricing-section";
+import { Navbar } from "@/components/layout/navbar";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { ProductsSection } from "@/components/sections/products-section";
+import { FeaturesBentoSection } from "@/components/sections/features-bento-section";
+import { PricingSection } from "@/components/sections/pricing-section";
 import { Logos3 } from "@/components/ui/logos3";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
