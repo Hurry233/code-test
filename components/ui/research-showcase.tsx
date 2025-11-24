@@ -1,9 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SplineScene } from "@/components/ui/splite";
 
 export function ResearchShowcase() {
+  const highlightCards = [
+    {
+      title: "Interactive prototypes",
+      caption: "Live demos",
+      description: "Experience breakthrough interfaces generated directly from our latest model checkpoints.",
+    },
+    {
+      title: "Alignment insights",
+      caption: "Research briefs",
+      description: "Transparent reporting keeps every experiment grounded in safety metrics and human feedback.",
+    },
+    {
+      title: "Open collaborations",
+      caption: "Global labs",
+      description: "Join partner institutions shaping benchmarks for reasoning, robotics, and multimodal learning.",
+    },
+    {
+      title: "Deployment playbooks",
+      caption: "Production ready",
+      description: "Operational guides show how we carry ideas from whiteboard concepts to launched features.",
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/10" />
@@ -81,12 +103,25 @@ export function ResearchShowcase() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="relative"
           >
-            <div className="relative w-full rounded-3xl border border-border/60 bg-black/80 p-4 shadow-[0px_0px_70px_-20px_rgba(80,80,120,0.35)]">
-              <div className="relative h-[420px] w-full overflow-hidden rounded-2xl border border-border/70">
-                <SplineScene 
-                  scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                  className="h-full w-full"
-                />
+            <div className="relative w-full rounded-3xl border border-border/60 bg-background/60 p-6 shadow-[0px_0px_70px_-25px_rgba(80,80,120,0.35)]">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 via-primary/0 to-primary/30 blur-3xl" />
+              <div className="relative grid gap-6 sm:grid-cols-2">
+                {highlightCards.map((card) => (
+                  <div
+                    key={card.title}
+                    className="relative overflow-hidden rounded-2xl border border-border/60 bg-background/80 p-6 backdrop-blur"
+                  >
+                    <span className="text-xs uppercase tracking-wider text-primary/80">
+                      {card.caption}
+                    </span>
+                    <h3 className="mt-3 text-lg font-semibold text-foreground">
+                      {card.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>

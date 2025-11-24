@@ -5,11 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const navItems = [
   { name: "Research", href: "#research" },
   { name: "Products", href: "#products" },
   { name: "Safety", href: "#safety" },
+  { name: "Pricing", href: "#pricing" },
   { name: "Company", href: "#company" },
 ];
 
@@ -67,6 +69,7 @@ export function SimplifiedNavbar() {
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center space-x-3">
+              <ThemeToggle />
               <Button variant="ghost" size="sm">
                 Log in
               </Button>
@@ -117,13 +120,18 @@ export function SimplifiedNavbar() {
                   </Link>
                 </motion.div>
               ))}
-              <div className="pt-4 space-y-3 border-t border-border/40">
-                <Button variant="outline" className="w-full" size="lg">
-                  Log in
-                </Button>
-                <Button className="w-full" size="lg">
-                  Sign up
-                </Button>
+              <div className="pt-4 border-t border-border/40 space-y-4">
+                <div className="flex justify-center">
+                  <ThemeToggle />
+                </div>
+                <div className="space-y-3">
+                  <Button variant="outline" className="w-full" size="lg">
+                    Log in
+                  </Button>
+                  <Button className="w-full" size="lg">
+                    Sign up
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>
