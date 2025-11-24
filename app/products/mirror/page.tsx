@@ -184,7 +184,7 @@ export default function AIAggregationStationPage() {
                 </ul>
               </div>
               <div className="relative">
-                <Card className="border-transparent bg-gradient-to-br from-white/90 via-indigo-50/80 to-sky-50/60 dark:from-indigo-950/60 dark:via-background/80 dark:to-background/70 backdrop-blur-xl shadow-xl">
+                <Card className="rounded-3xl border-transparent bg-gradient-to-br from-white/90 via-indigo-50/80 to-sky-50/60 dark:from-indigo-950/60 dark:via-background/80 dark:to-background/70 backdrop-blur-xl shadow-xl">
                   <div className="p-8 space-y-6">
                     <h2 className="text-2xl font-semibold">什么是 AI 聚合系统？</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed">

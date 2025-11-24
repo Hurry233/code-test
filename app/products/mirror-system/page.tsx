@@ -240,6 +240,7 @@ export default function MirrorSystemPage() {
         {/* Hero Section */}
         <section className="relative overflow-hidden py-16 sm:py-24">
           <div className="absolute inset-0 bg-gradient-to-b from-amber-500/10 via-background to-background" />
+          <div className="absolute inset-y-0 right-[10%] hidden h-72 w-72 rounded-full bg-gradient-to-br from-amber-200/40 to-orange-100/30 blur-3xl lg:block dark:opacity-0" />
           <div className="container relative mx-auto px-4">
             <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
               <div className="space-y-6">
@@ -262,7 +263,7 @@ export default function MirrorSystemPage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="rounded-3xl border border-amber-200/60 bg-card/50 p-8 shadow-xl backdrop-blur space-y-6">
+                <Card className="rounded-3xl border border-amber-200/60 bg-card/50 p-8 shadow-xl backdrop-blur space-y-6">
                   <div className="space-y-4">
                     <h2 className="text-2xl font-semibold">为什么选择镜像系统</h2>
                     <ul className="space-y-3 text-sm sm:text-base text-muted-foreground">
@@ -285,7 +286,7 @@ export default function MirrorSystemPage() {
                       <li>预约优先开通白名单，锁定资源</li>
                     </ul>
                   </div>
-                </div>
+                </Card>
               </div>
             </div>
           </div>
