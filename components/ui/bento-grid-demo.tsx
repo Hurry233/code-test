@@ -26,7 +26,7 @@ const features = [
   {
     Icon: InputIcon,
     name: "自然语言对话",
-    description: "GPT-5、Claude-4.5、Gemini-2.5-Pro等最新AI模型，更强大的语义理解和思考能力，更长的上下文长度，更精准的回答质量。",
+    description: "GPT-5、Claude-4.5、Gemini-3-Pro等最新AI模型，更强大的语义理解和思考能力，更长的上下文长度，更精准的回答质量。",
     href: "/",
     cta: "Learn more",
     background: (
@@ -54,7 +54,7 @@ const features = [
   {
     Icon: CalendarIcon,
     name: "绘画与视频",
-    description: "支持Midjourney、Sora、Nano-banana等图像/视频生成模型，快速生成高质量图片/视频。",
+    description: "支持Midjourney、Sora-2、Nano-banana-pro等图像/视频生成模型，快速生成高质量图片/视频。",
     href: "/",
     cta: "Learn more",
     background: (
