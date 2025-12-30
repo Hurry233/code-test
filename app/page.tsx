@@ -37,9 +37,9 @@ const displayCards = [
   },
   {
     icon: <Rocket className="size-4 text-sky-300" />,
-    title: "ChatGPT镜像",
-    description: "国内直连ChatGPT，使用大厂原生服务",
-    date: "超低价预售",
+    title: "ChatGPT代充服务",
+    description: "最低的价格最优质的服务",
+    date: "Plus代充仅需140元",  
     iconClassName: "text-sky-500",
     titleClassName: "text-sky-600 dark:text-sky-400",
     className:
