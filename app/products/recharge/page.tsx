@@ -18,54 +18,96 @@ import {
 } from "lucide-react";
 
 const heroBenefits = [
-  "支持 ChatGPT Plus / Pro / Business 官方订阅代充",
+  "ChatGPT Plus / Pro / Business 官方订阅代充",
   "全流程官方渠道，保障账号安全与权益",
   "可开具企业抬头发票、合同及付款凭证",
   "支持批量充值、团队共享额度与统一续费",
-  "会员权益同步，包括 GPT-4、Code Interpreter、插件商店等",
+  "无需提供账户密码，更加隐私可靠",
 ];
 
 const plans = [
   {
+    id: "plus",
     name: "ChatGPT Plus",
-    tag: "个人订阅",
-    price: "USD $20/月",
+    tag: "最受欢迎",
+    price: "US$20/月",
     description:
-      "面向个人用户的旗舰方案，快速解锁 GPT-4/4o、插件生态与 30 天聊天历史同步，适合自由职业者与内容创作者。",
+      "面向个人用户的进阶订阅：在免费版基础上获得更高容量与更强推理能力，适合长期学习、写作、编码与日常研究。",
     highlights: [
-      "GPT-4、GPT-4o、GPT-4o mini 等高阶模型",
-      "联网搜索、插件商店、文件上传",
-      "最多 30 天的聊天记录与会话同步",
+      "GPT-5.2 Thinking 高级推理（更高使用容量）",
+      "消息与上传额度提升；图片生成更快、质量更高",
+      "深度研究与智能体模式（Agent Mode）额度扩展",
+      "项目（Projects）、任务（Tasks）与自定义 GPT（适合长期工作流）",
+      "有限使用 Sora 1 视频生成；包含 Codex 智能体",
     ],
     cta: "了解 Plus 方案",
+    href: "https://chatgpt.com/zh-Hans-CN/plans/plus/",
+    links: {
+      learnMore: "https://chatgpt.com/zh-Hans-CN/plans/plus/",
+      comparePlans: "https://chatgpt.com/zh-Hans-CN/pricing",
+      getStarted: "https://chatgpt.com/zh-Hans-CN/pricing",
+      billingHelp: "https://help.openai.com/",
+    },
+    footnote:
+      "具体可用模型、额度与地区定价可能会调整，请以官方页面展示为准。",
   },
+
   {
+    id: "pro",
     name: "ChatGPT Pro",
-    tag: "进阶创作者版",
-    price: "USD $200/月",
+    tag: "专业创作者 / 开发者",
+    price: "US$200/月",
     description:
-      "针对重度创作者与专业开发者的 Pro 版本，提升消息速率与模型调用额度，适合高频创作与多模态实验。",
+      "面向高频使用者的旗舰版本：在 Plus 基础上解锁更强的 GPT-5 专业推理与“无限”容量（受防滥用规则约束），适合研究、工程、内容与多模态重度工作。",
     highlights: [
-      "更高的 GPT-4o 调用权重与优先队列",
-      "视频、语音、多文件处理能力升级",
-      "提升上传大小、项目空间与自动化脚本运行时限",
+      "GPT-5.2 Pro 专业推理（更强分析与更稳结果）",
+      "消息与上传数量“无限”（受防滥用规则约束）",
+      "图片生成“无限”且更快",
+      "深度研究与智能体模式最高支持；最大记忆与上下文能力",
+      "Sora 1 视频生成高级使用权限；扩展版 Codex 智能体",
+      "新能力研究预览（抢先体验）",
     ],
     cta: "了解 Pro 方案",
+    href: "https://chatgpt.com/zh-Hans-CN/plans/pro/",
+    links: {
+      learnMore: "https://chatgpt.com/zh-Hans-CN/plans/pro/",
+      comparePlans: "https://chatgpt.com/zh-Hans-CN/pricing",
+      getStarted: "https://chatgpt.com/zh-Hans-CN/pricing",
+      whatIsPro: "https://help.openai.com/zh-hans-cn/articles/9793128-what-is-chatgpt-pro",
+    },
+    footnote:
+      "“无限”使用需遵守防滥用规则；API 调用不包含在 ChatGPT Pro 内，需单独计费。",
   },
+
   {
+    id: "business",
     name: "ChatGPT Business",
-    tag: "团队 / 企业订阅",
-    price: "USD $60/用户/月 起",
+    tag: "团队 / 成长型企业",
+    price: "US$25/席位/月（年付）或 US$30/席位/月（月付）",
     description:
-      "官方提供的企业级方案，支持团队管理、权限分级与数据加密，适合需要统一管理与扩展能力的组织。",
+      "为团队打造的安全协作工作区：提供共享空间、管理员控制、企业级数据隐私与合规能力，并可连接常用工具形成公司知识工作流。",
     highlights: [
-      "私有化知识库、品牌工作区、统一账单",
-      "成员权限、使用审计、对话留痕",
-      "企业级隐私承诺与 SOC2 合规保障",
+      "2 个席位起订；可按需增减席位并统一结算",
+      "安全、专属的团队工作区：权限/管理控制 + SAML SSO + MFA",
+      "企业级数据隐私：默认不用于训练；传输与静态加密",
+      "公司知识与连接器：可连接 Slack、Google Drive、SharePoint、GitHub 等",
+      "支持深度研究、录制模式、Canvas、共享项目、任务、自定义工作区 GPT",
+      "可选“积分”机制，给重度用户扩展用量与能力",
     ],
     cta: "了解 Business 方案",
+    href: "https://chatgpt.com/zh-Hans-CN/business/business-plan/",
+    links: {
+      learnMore: "https://chatgpt.com/zh-Hans-CN/business/business-plan/",
+      pricing: "https://chatgpt.com/zh-Hans-CN/pricing",
+      annualPricingDetail: "https://openai.com/zh-Hans-CN/business/chatgpt-pricing/",
+      businessFAQ: "https://help.openai.com/zh-hans-cn/articles/8542115-chatgpt-business-faq",
+      contactSales: "https://chatgpt.com/zh-Hans-CN/business/enterprise",
+    },
+    footnote:
+      "企业/教育/更高阶治理（如 SCIM、数据驻留等）通常在 Enterprise 方案中提供。",
   },
 ];
+
 
 const comparison = [
   {
