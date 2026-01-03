@@ -40,7 +40,7 @@ const plans = [
       "项目（Projects）、任务（Tasks）与自定义 GPT（适合长期工作流）",
       "有限使用 Sora 2 视频生成；包含 Codex 智能体",
     ],
-    cta: { label: "订阅 Plus 方案", href: "https://shop.pro365.top/buy/8" }
+    cta: "订阅 Plus 方案",
     
   },
 
