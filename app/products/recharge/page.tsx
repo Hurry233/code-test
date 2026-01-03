@@ -38,18 +38,10 @@ const plans = [
       "消息与上传额度提升；图片生成更快、质量更高",
       "深度研究与智能体模式（Agent Mode）额度扩展",
       "项目（Projects）、任务（Tasks）与自定义 GPT（适合长期工作流）",
-      "有限使用 Sora 1 视频生成；包含 Codex 智能体",
+      "有限使用 Sora 2 视频生成；包含 Codex 智能体",
     ],
-    cta: "了解 Plus 方案",
-    href: "https://chatgpt.com/zh-Hans-CN/plans/plus/",
-    links: {
-      learnMore: "https://chatgpt.com/zh-Hans-CN/plans/plus/",
-      comparePlans: "https://chatgpt.com/zh-Hans-CN/pricing",
-      getStarted: "https://chatgpt.com/zh-Hans-CN/pricing",
-      billingHelp: "https://help.openai.com/",
-    },
-    footnote:
-      "具体可用模型、额度与地区定价可能会调整，请以官方页面展示为准。",
+    cta: { label: "订阅 Plus 方案", href: "https://shop.pro365.top/buy/8" }
+    
   },
 
   {
