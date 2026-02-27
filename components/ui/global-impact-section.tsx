@@ -1,28 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { WorldMap } from "@/components/ui/world-map";
+import { WorldMap } from "@/components/ui/map";
 
 const dots = [
   {
-    start: { lat: 37.7749, lng: -122.4194 }, // SF
-    end: { lat: 51.5074, lng: -0.1278 }, // London
+    start: { lat: 37.7749, lng: -122.4194, label: "San Francisco" },
+    end: { lat: 51.5074, lng: -0.1278, label: "London" },
   },
   {
-    start: { lat: 40.7128, lng: -74.006 }, // NYC
-    end: { lat: 35.6762, lng: 139.6503 }, // Tokyo
+    start: { lat: 40.7128, lng: -74.006, label: "New York" },
+    end: { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
   },
   {
-    start: { lat: 52.52, lng: 13.405 }, // Berlin
-    end: { lat: -33.8688, lng: 151.2093 }, // Sydney
+    start: { lat: 52.52, lng: 13.405, label: "Berlin" },
+    end: { lat: -33.8688, lng: 151.2093, label: "Sydney" },
   },
   {
-    start: { lat: 28.6139, lng: 77.209 }, // Delhi
-    end: { lat: -34.6037, lng: -58.3816 }, // Buenos Aires
+    start: { lat: 28.6139, lng: 77.209, label: "Delhi" },
+    end: { lat: -34.6037, lng: -58.3816, label: "Buenos Aires" },
   },
   {
-    start: { lat: 1.3521, lng: 103.8198 }, // Singapore
-    end: { lat: 48.2082, lng: 16.3738 }, // Vienna
+    start: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
+    end: { lat: 48.2082, lng: 16.3738, label: "Vienna" },
   },
 ];
 
