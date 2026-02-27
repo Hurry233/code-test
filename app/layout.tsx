@@ -4,8 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Spline Integration Demo",
-  description: "Demonstration of Spline component integration with shadcn/ui",
+  title: "GPTW -国内最全面的AI综合服务平台",
+  description: "提供最优惠的ChatGPT代充服务,最便捷的AI镜像服务，最正规、实惠的主流大模型API聚合网关，企业级的对接服务。",
 };
 
 export default function RootLayout({
